@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputLeft = KeyCode.A;
     public KeyCode inputRight = KeyCode.D;
-
+    // gắn các script animation di chuyển các hướng.
     public AnimatedSprite spriteRendererUp;
     public AnimatedSprite spriteRendererDown;
     public AnimatedSprite spriteRendererLeft;
