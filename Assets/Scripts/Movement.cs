@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rigidbody { get; private set; }
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
-
+    // gán nút
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
     public KeyCode inputLeft = KeyCode.A;
@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(inputUp)) SetDirection(Vector2.up, spriteRendererUp);
+        if (Input.GetKey(inputUp)) SetDirection(Vector2.up, spriteRendererUp);//nếu nhấn nút w truyển vector với coppoment up vào SetDirection
         else if (Input.GetKey(inputDown)) SetDirection(Vector2.down, spriteRendererDown);
         else if (Input.GetKey(inputLeft)) SetDirection(Vector2.left, spriteRendererLeft);
         else if (Input.GetKey(inputRight)) SetDirection(Vector2.right, spriteRendererRight);
@@ -37,18 +37,18 @@ public class Movement : MonoBehaviour
         Vector2 position = rigidbody.position; //vị trí theo rigi
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
 
-        rigidbody.MovePosition(position + translation);
+        rigidbody.MovePosition(position + translation);// di chuyển nhân vật theo hướng
     }
-    private void SetDirection(Vector2 newDirection, AnimatedSprite spriteRenderer)
+    private void SetDirection(Vector2 newDirection, AnimatedSprite spriteRenderer) //
     {
-        direction = newDirection;
+        direction = newDirection; // truyền hướng tới fixupdate
 
-        spriteRendererUp.enabled = spriteRenderer == spriteRendererUp;
+        spriteRendererUp.enabled = spriteRenderer == spriteRendererUp; //bật compoment script của Up lên nếu 
         spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
         spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
         spriteRendererRight.enabled = spriteRenderer == spriteRendererRight;
 
         activeSpriteRenderer = spriteRenderer;
-        activeSpriteRenderer.idle = direction == Vector2.zero;
+        activeSpriteRenderer.idle = direction == Vector2.zero;// true khi đứng yên.
     }
 }

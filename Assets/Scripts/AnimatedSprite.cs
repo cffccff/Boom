@@ -6,8 +6,8 @@ public class AnimatedSprite : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
 
-    public Sprite idleSprite;// đứng yên
-    public Sprite[] animationSprites; //animation
+    public Sprite idleSprite;// hình đứng yên
+    public Sprite[] animationSprites; //các hình để tạo animation
 
     public float animationTime = 0.25f;
     private int animationFrame;
@@ -20,7 +20,7 @@ public class AnimatedSprite : MonoBehaviour
     }
     private void OnEnable()
     {
-        spriteRenderer.enabled = true;
+        spriteRenderer.enabled = true;// bật compoment SpriteRenderer khi nhấn nút di chuyển
     }
     private void OnDisable()
     {
@@ -28,22 +28,22 @@ public class AnimatedSprite : MonoBehaviour
     }
     private void Start()
     {
-        InvokeRepeating(nameof(NextFrame), animationTime, animationTime);
+        InvokeRepeating(nameof(NextFrame), animationTime, animationTime); //sau 1/6s thực hiện và lặp lại 1/6s/1 lần// như hàm update
     }
     private void NextFrame()
     {
-        animationFrame++;
-        if (loop && animationFrame >= animationSprites.Length)
+        animationFrame++; //tăng lên
+        if (loop && animationFrame >= animationSprites.Length) //nếu tăng tới 4
         {
-            animationFrame = 0;
+            animationFrame = 0; //reset về 0
         }
         if (idle)
         {
-            spriteRenderer.sprite = idleSprite;
+            spriteRenderer.sprite = idleSprite; //spriteRenderer.sprite hình ảnh hiển thị
         }
-        else if (animationFrame >= 0 && animationFrame < animationSprites.Length)
+        else if (animationFrame >= 0 && animationFrame < animationSprites.Length) //lớn hơn = 0 và nhỏ hơn 4
         {
-            spriteRenderer.sprite = animationSprites[animationFrame];
+            spriteRenderer.sprite = animationSprites[animationFrame];//nếu animationFrame = 0 thì chạy sprite thứ 0
         }
 
     }
