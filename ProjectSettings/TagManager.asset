@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DestructibleObstacle
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -14,11 +15,11 @@ TagManager:
   - UI
   - StopExplosion
   - Bomb
-  - A
+  - Explosion
   - Player
   - DestructibleObstacle
-  - 
-  - 
+  - Item
+  - Stage
   - 
   - 
   - 

@@ -110,4 +110,9 @@ public class BombController : MonoBehaviour
             destructibleTiles.SetTile(cell, null); //chuyển ô trong tittle map thành null.
         }
     }
+    public void AddBomb()
+    {
+        bombAmount++;
+        bombsRemaining++;
+    }
 }

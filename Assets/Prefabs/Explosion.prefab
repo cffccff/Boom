@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8276877153483584537}
   - component: {fileID: 3561801230499774565}
   - component: {fileID: -43271069048518558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
   start: {fileID: 4900797913947414147}
   middle: {fileID: 3237404348371544068}
   end: {fileID: 5648653764671075640}
+  BombController: {fileID: 0}
 --- !u!58 &-43271069048518558
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ GameObject:
   - component: {fileID: 6026862791892244543}
   - component: {fileID: 7465034209958534901}
   - component: {fileID: 5648653764671075640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +216,7 @@ GameObject:
   - component: {fileID: 5187025578158694834}
   - component: {fileID: 8042479227206109556}
   - component: {fileID: 3237404348371544068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +326,7 @@ GameObject:
   - component: {fileID: 6569537964190811960}
   - component: {fileID: 944827413216428657}
   - component: {fileID: 4900797913947414147}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}

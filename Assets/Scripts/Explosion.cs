@@ -28,13 +28,4 @@ public class Explosion : MonoBehaviour
     {
         Destroy(gameObject, seconds);
     }
-    ////+
-    //private void OnTriggerEnter2D(Collider2D collision) // phải có rigitbody
-    //{
-    //    if (collision.tag == "DestructibleObstacle")
-    //    {
-    //        Destroy(collision.gameObject);
-    //        Debug.Log("phat hien");
-    //    }
-    //}
 }
