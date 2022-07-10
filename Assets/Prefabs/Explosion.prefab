@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4546666702794441222}
   - component: {fileID: 8276877153483584537}
   - component: {fileID: 3561801230499774565}
+  - component: {fileID: -43271069048518558}
   m_Layer: 0
-  m_Name: Exphosion
+  m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +44,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113288553590993738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -77,6 +78,22 @@ MonoBehaviour:
   start: {fileID: 4900797913947414147}
   middle: {fileID: 3237404348371544068}
   end: {fileID: 5648653764671075640}
+--- !u!58 &-43271069048518558
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113288553590993738}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &4065179521574148844
 GameObject:
   m_ObjectHideFlags: 0

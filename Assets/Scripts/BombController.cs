@@ -18,6 +18,7 @@ public class BombController : MonoBehaviour
     public LayerMask destructibleObstacle;
     public float explosionDuration = 1f;
     public int explosionRadius = 1; // phạm vi boom nổ
+    public Vector2 destroyPosition;
 
     [Header("Destructible")]
     public Tilemap destructibleTiles;
@@ -72,6 +73,12 @@ public class BombController : MonoBehaviour
         
         if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))// nếu tại vị trí có layer thì không tạo nhân bản nổ
         {
+            ClearDestructible(position);
+            return;
+        }
+        else if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, destructibleObstacle))
+        {
+            Debug.Log(Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, destructibleObstacle));
             ClearDestructible(position);
             return;
         }

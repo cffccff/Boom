@@ -7,7 +7,12 @@ public class Explosion : MonoBehaviour
     public AnimatedSprite start;// đang tắt
     public AnimatedSprite middle;
     public AnimatedSprite end;
+    public BombController BombController;
 
+    private void Awake()
+    {
+        BombController = FindObjectOfType<BombController>();
+    }
     public void SetActiveRenderer(AnimatedSprite renderer)// bật component truyền vào và tắt component khác
     {
         start.enabled = renderer == start;
@@ -23,4 +28,13 @@ public class Explosion : MonoBehaviour
     {
         Destroy(gameObject, seconds);
     }
+    ////+
+    //private void OnTriggerEnter2D(Collider2D collision) // phải có rigitbody
+    //{
+    //    if (collision.tag == "DestructibleObstacle")
+    //    {
+    //        Destroy(collision.gameObject);
+    //        Debug.Log("phat hien");
+    //    }
+    //}
 }
