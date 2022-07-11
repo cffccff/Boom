@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DestructibleObstacle
+  - Explosion
+  - Walls
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,13 +15,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - StopExplosion
+  - Bomb
+  - Explosion
+  - Player
+  - DestructibleObstacle
+  - Item
+  - Stage
   - 
   - 
   - 
