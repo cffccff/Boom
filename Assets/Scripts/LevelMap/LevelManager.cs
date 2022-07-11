@@ -7,6 +7,8 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
+    public int numberOfLevels = 2;
+    public int curentLevels = 1;
     public static LevelManager instance;
     private void Awake()
     {
@@ -36,7 +38,10 @@ public class LevelManager : MonoBehaviour
         Background = 40,
         Ground = 50
     }
-
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         //save level when pressing Ctrl + A
@@ -88,7 +93,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/testLevel.json", json);
+        File.WriteAllText(Application.dataPath + "/Levels/Level2.json", json);
 
         //debug
         Debug.Log("Level was saved");
@@ -96,8 +101,9 @@ public class LevelManager : MonoBehaviour
 
     void LoadLevel()
     {
+        curentLevels++;
         //load the json file to a leveldata
-        string json = File.ReadAllText(Application.dataPath + "/testLevel.json");
+        string json = File.ReadAllText(Application.dataPath + "/Levels/Level2.json");
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         foreach (var data in levelData.layers)
