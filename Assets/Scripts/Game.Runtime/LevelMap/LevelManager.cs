@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -99,11 +99,12 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Level was saved");
     }
 
-    void LoadLevel()
+    public void LoadLevel()
     {
         curentLevels++;
+        var levels = "Levels/Level" + curentLevels;
         //load the json file to a leveldata
-        string json = File.ReadAllText(Application.dataPath + "/Levels/Level2.json");
+        var json = Resources.Load<TextAsset>(levels).text; //chứa đường dẫn đến thư mục dữ liệu trò chơi trên thiết bị đích
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         foreach (var data in levelData.layers)

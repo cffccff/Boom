@@ -24,8 +24,7 @@ public class EnemyMovement : MonoBehaviour
             if (direction == Vector2.up)    direction = Vector2.right;
             else if (direction == Vector2.right) direction = Vector2.down;
             else if (direction == Vector2.down)  direction = Vector2.left;
-            else if (direction == Vector2.left)  direction = Vector2.up;
-            Debug.Log("va cham wall  ");
+            else if (direction == Vector2.left)  direction = Vector2.up;          
         }   
         
     }

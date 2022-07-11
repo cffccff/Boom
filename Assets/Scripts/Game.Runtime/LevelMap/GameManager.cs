@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public LevelManager levelManager;
     public GameObject[] enemys;
     //public Transform enemyParent;
     public int countEnemy;
     private void Start()
     {
+
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
         countEnemy = enemys.Length;
     }
@@ -22,6 +24,6 @@ public class GameManager : MonoBehaviour
     }
     private void NextLevel()// chuyển qua màn tiếp theo
     {
-
+        levelManager.LoadLevel();
     }
 }

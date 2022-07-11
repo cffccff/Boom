@@ -24,7 +24,6 @@ public class Health : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
             takeDamage();
-            Debug.Log("nhận sát thương");
         }
     }
     private void takeDamage()
@@ -34,14 +33,17 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            movement.death();
             movement.enabled = false;
             activeSpriteDeath.enabled = true;
+
             Invoke(nameof(Death), 1.25f);
         }       
     }
     private void Death()
     {
         gameObject.SetActive(false);
+        
     }
     private IEnumerator Invunerability()// bất tử
     {
