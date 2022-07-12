@@ -8,6 +8,7 @@ TagManager:
   - Explosion
   - Walls
   - Enemy
+  - Bomb
   layers:
   - Default
   - TransparentFX
