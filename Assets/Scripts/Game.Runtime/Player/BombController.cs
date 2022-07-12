@@ -15,7 +15,6 @@ public class BombController : MonoBehaviour
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
-    public LayerMask destructibleObstacle;
     public float explosionDuration = 1f;
     public int explosionRadius = 1; // phạm vi boom nổ
     public Vector2 destroyPosition;
@@ -23,6 +22,7 @@ public class BombController : MonoBehaviour
     [Header("Destructible")]
     public Tilemap destructibleTiles;
     public Destructible destructiblePrefab; //script animaton vỡ 
+    public Tile destructibleTile;
 
 
     private void OnEnable()
@@ -76,12 +76,6 @@ public class BombController : MonoBehaviour
             ClearDestructible(position);
             return;
         }
-        else if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, destructibleObstacle))
-        {
-            Debug.Log(Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, destructibleObstacle));
-            ClearDestructible(position);
-            return;
-        }
 
         //nhân bản nổ mid, end
         Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
@@ -102,9 +96,10 @@ public class BombController : MonoBehaviour
     private void ClearDestructible(Vector2 position)
     {
         Vector3Int cell = destructibleTiles.WorldToCell(position); //Chuyển đổi vị trí thế giới thành vị trí ô trong destrucibles
-        TileBase tile = destructibleTiles.GetTile(cell); // lấy ô trong tittle map destrucibles
+        //TileBase tile = destructibleTiles.GetTile(cell); // lấy ô trong tittle map destrucibles
+        Tile tile = destructibleTiles.GetTile<Tile>(cell); //lấy ô trong destrucible tại vị trí cell trong tileBase
 
-        if (tile != null) // ô đó khác null
+        if (tile != null && tile == destructibleTile) // ô đó khác null ô đó là ô phá huỷ được
         {
             Instantiate(destructiblePrefab, position, Quaternion.identity);//nhân bản gameobject script animation 
             destructibleTiles.SetTile(cell, null); //chuyển ô trong tittle map thành null.
