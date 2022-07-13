@@ -5,52 +5,64 @@ using UnityEngine;
 public class EnemyHeart : MonoBehaviour
 {
 
-    public int startingHealth = 3;
-    public int currentHealth;
+    [SerializeField] int startingHealth = 3;
+    [SerializeField] int currentHealth;
 
-    public GameManager gameManager;
-    public EnemyMovement movement;
+   // public GameManager gameManager;
+   // public EnemyMovement movement;
 
-    [Header("iFrames")]
-    [SerializeField] private float iFramesDuration; // thời gian bất tử
+
     private SpriteRenderer spriteRend;
+    public Material flashMaterial;
+    public Material defaultMaterial;
+    private AutoMove autoMoveScript;
+    private bool test = false;
     private void Start()
     {
         spriteRend = GetComponent<SpriteRenderer>();
+        autoMoveScript = GetComponent<AutoMove>();
         currentHealth = startingHealth;
     }
-    private void OnTriggerEnter2D(Collider2D collision)// va chạm nổ 
+  
+  
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-            if (currentHealth == 0) return;
-            takeDamage();
-            //đang có buff đứng giữa 2 explosion thì bị ăn 2 damage
+
+            StartCoroutine(Hurt());
+
+            currentHealth--;
+            if (currentHealth <= 0)
+            {
+                autoMoveScript.enabled = false;
+                Invoke(nameof(DestroyObject), 1);
+            }
         }
     }
-    private void takeDamage()
+    IEnumerator Hurt()
     {
-        currentHealth--;
-        StartCoroutine(Invunerability());
+      
+      
 
-        if (currentHealth <= 0)
+        for (float i = 0; i <= 0.5; i+=0.1f)
         {
-            movement.enabled = false;           
-            Invoke(nameof(Death), 1.25f);
-            return;
-        }       
-    }
-    private void Death()
-    {
-        gameManager.CheckWinStage();
-        gameObject.SetActive(false);
-    }
-    private IEnumerator Invunerability()// bất tử
-    {
-        Physics2D.IgnoreLayerCollision(8, 9, true); // bỏ qua va chạm layer (player and explotion)
+            spriteRend.material = flashMaterial;
 
-        yield return new WaitForSeconds(iFramesDuration);
+            yield return new WaitForSeconds(.05f);
 
-        Physics2D.IgnoreLayerCollision(8, 9, false);
+            spriteRend.material = defaultMaterial;
+            yield return new WaitForSeconds(.05f);
+        }
+      
+
+
+
     }
+    private void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
+   
+
 }

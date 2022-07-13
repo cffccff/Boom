@@ -2,41 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-public class AutoMove : MonoBehaviour
+
+public class BaseEnemy : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    [SerializeField] private float moveSpeed=2f;
+    [SerializeField] private int maxHealth=1;
+    [SerializeField] private int currentHealth;
+    private Tilemap tilemap;
 
-    public Tilemap tilemap;
+    private Animator animator;
 
-    public Animator animator;
-
-    public Rigidbody2D rb;
-    public Material materialFlash;
+    private Rigidbody2D rb;
+    public Material flashMaterial;
     public Material defaultMaterial;
-    public new Collider2D collider;
+    private Collider2D coll;
     private SpriteRenderer spriteRenderer;
     public GameObject[] wallChecks = new GameObject[4]; // bottom, top, right, left
     readonly int[,] directions = new int[,] { { 0, -1 }, { 0, 1 }, { 1, 0 }, { -1, 0 } }; // bottom, top, right, left
 
-    bool directionChosen = false;
+   [SerializeField] bool directionChosen = false;
 
-    int index;
+   private int index;
 
-    Vector2 movement;
-
+   private Vector2 movement;
+    private float count;
     void Start()
     {
-       
+        SetUpReference();
+        SetUpStat();
+    }
+    private void SetUpReference()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        tilemap = GameObject.Find("Sky").GetComponent<Tilemap>();
+    }
+    protected virtual void SetUpStat()
+    {
+      //  moveSpeed = 2f;
+       // maxHealth = 1;
+        currentHealth = maxHealth;
+       
     }
     void Update()
     {
+       
+      
         ///Set enemy direction if not chosen
         ///Check obstacles in enemy direction
-
-
+        RandomDirection();
+        SetAnimation();
+    }
+    protected virtual void RandomDirection()
+    {
         if (!directionChosen) //enemy can't always choose every possible way
         {
+            
             GetDirection();
         }
         if (ObstacleThere(wallChecks[index]))
@@ -45,26 +68,24 @@ public class AutoMove : MonoBehaviour
             movement.y = 0;
             directionChosen = false;
         }
-
+    }
+    private void SetAnimation()
+    {
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         if (movement.x >= 1) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
     }
-
     void FixedUpdate()
     {
         ///Enemy Movement
-
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    void GetDirection()
+   private void GetDirection()
     {
         ///Set new random direction, not to an obstacle though 
-
         System.Random rnd = new System.Random();
         index = rnd.Next(4);
         while (ObstacleThere(wallChecks[index]))
@@ -77,17 +98,15 @@ public class AutoMove : MonoBehaviour
         directionChosen = true;
     }
 
-    bool ObstacleThere(GameObject check)
+   private bool ObstacleThere(GameObject check)
     {
         ///Decide, if obstacle is at a position of the enemy wallCheck object
-
         Vector3 worldPos = check.transform.position;
         Vector3Int cell = tilemap.WorldToCell(worldPos);
         if (tilemap.GetTile(cell) != null) //tile block
         {
             return true;
         }
-
         try
         {
             Vector3 bombPos = GameObject.FindGameObjectWithTag("Bomb").transform.position;
@@ -96,12 +115,7 @@ public class AutoMove : MonoBehaviour
             {
                 return true;
             }
-            //Vector3 gatePos = GameObject.FindGameObjectWithTag("Gate").transform.position;
-            //Vector3Int gateCell = tilemap.WorldToCell(gatePos);
-            //if (cell == gateCell) //gate block
-            //{
-            //    return true;
-            //}
+            
         }
         catch (System.NullReferenceException) //no bomb placed
         {
@@ -109,6 +123,44 @@ public class AutoMove : MonoBehaviour
         return false;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
 
+            StartCoroutine(Hurt());
+
+            currentHealth--;
+            if (currentHealth <= 0)
+            {
+                moveSpeed = 0f;
+                Invoke(nameof(DestroyObject), 1.2f);
+            }
+        }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("Enemy collider");
+            movement = -movement;
+            directionChosen = false;
+        }
+
+    }
+  
+    private IEnumerator Hurt()
+    {
+        for (float i = 0; i <= 0.5; i += 0.1f)
+        {
+            spriteRenderer.material = flashMaterial;
+
+            yield return new WaitForSeconds(.05f);
+
+            spriteRenderer.material = defaultMaterial;
+            yield return new WaitForSeconds(.05f);
+        }
+    }
+    private void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
 
 }
