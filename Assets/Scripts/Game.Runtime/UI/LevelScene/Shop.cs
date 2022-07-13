@@ -6,47 +6,59 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class Shop : MonoBehaviour, IPointerClickHandler
+public class Shop : MonoBehaviour
 {
     public TextMeshProUGUI textTotalGold;
-    public Canvas shopPannel;
+    ShopData shopData;
 
     [Header("SpeedBuff")]
     public TextMeshProUGUI textCostSpeed;
     public Button click;
     public Image sliceFull;
-    int totalGold =100000;
-    int costSpeed =1000;
-    public int speed =0;
-    int level =0;
+    public int costSpeed =1000;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        shopPannel.enabled = true;
-    }
     void Start()
     {
-        TextTotalGold();
+        LoadShopData();// load speedLevel, totalGold
+        Load();
     }
     void TextTotalGold()
     {
-        textTotalGold.text =$"GOLD {totalGold.ToString()}";
+        textTotalGold.text = $"GOLD {shopData.totalGold.ToString()}";
     }
-    public void UpSpeed()// gắn vào button speed
+    public void UpSpeed()// gắn vào button speed khi click thì chạy    
     {
-        if (level == 5) return;
+        if (shopData.speedLevel == 5) return;
 
-        if (totalGold >= costSpeed);
-        {           
-            totalGold -= costSpeed;
-            costSpeed = costSpeed * 2;
-            speed++;
-            level++;
-            sliceFull.fillAmount += 0.2f;
+        if (shopData.totalGold > 1000)
+        {
+            shopData.speedLevel++;
+            shopData.totalGold -= costSpeed;
+            Load();
+        };
+    }
+    public void Load()
+    {
+        if (shopData.speedLevel != 0) costSpeed = 1000 * 3 * shopData.speedLevel;
+        sliceFull.fillAmount = shopData.speedLevel * 0.2f;
 
-            if (level <= 4) textCostSpeed.text = $"{costSpeed.ToString()}";
-            else textCostSpeed.text = "MAX";
-            TextTotalGold();
+        if (shopData.speedLevel <= 4) textCostSpeed.text = $"{costSpeed.ToString()}";
+        else textCostSpeed.text = "MAX";
+        TextTotalGold();
+        SavePlayerData();
+    }
+
+    public void SavePlayerData()
+    {
+        SaveShop.Save(shopData);
+    }
+    public void LoadShopData()// load dữ liệu
+    {
+        shopData = SaveShop.Load();// lấy dữ liệu từ file save
+        if(shopData == null)
+        {
+            shopData = new ShopData(0, 0);
+            SaveShop.Save(shopData);
         }
-    }   
+    }
 }

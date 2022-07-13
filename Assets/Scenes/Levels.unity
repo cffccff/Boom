@@ -375,11 +375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTotalGold: {fileID: 44262905}
-  shopPannel: {fileID: 52118730}
   textCostSpeed: {fileID: 1062746798}
   click: {fileID: 595189976}
   sliceFull: {fileID: 609462128}
-  speed: 0
+  costSpeed: 1000
 --- !u!1 &595189974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,15 +1148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420035852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7dfce3429e61474e9c8f7c702e4e80e, type: 3}
+  m_Script: {fileID: 11500000, guid: 39a71d5cfc324a645bea0107de87e157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textTotalGold: {fileID: 0}
   shopPannel: {fileID: 52118730}
-  textCostSpeed: {fileID: 0}
-  click: {fileID: 595189976}
-  sliceFull: {fileID: 609462128}
-  speed: 0
 --- !u!1 &1455374509
 GameObject:
   m_ObjectHideFlags: 0

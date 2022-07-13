@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Levels/Level2.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level3.json", json);
 
         //debug
         Debug.Log("Level was saved");
@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
         currentLevel++;
         var levels = $"Levels/Level{currentLevel}";
         //load the json file to a leveldata
-        var json = Resources.Load<TextAsset>(levels).text; //chứa đường dẫn đến thư mục dữ liệu trò chơi trên thiết bị đích
+        string json = Resources.Load<TextAsset>(levels).text; //chuyển đổi từ file json sang string.
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         foreach (var data in levelData.layers)
