@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rigidbody { get; private set; }
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
+    float initialSpeed = 5f;
+
     // gán nút
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
@@ -18,6 +20,17 @@ public class Movement : MonoBehaviour
     public AnimatedSprite spriteRendererLeft;
     public AnimatedSprite spriteRendererRight;
     public AnimatedSprite activeSpriteRenderer;
+
+    public SaveGold saveGold;
+    private void Start()// cứ vào scene là truyền dữ liệu từ shop tới
+    {
+        saveGold = FindObjectOfType<SaveGold>();
+        resetBuff();
+    }
+    public void resetBuff()
+    {
+        speed = initialSpeed + saveGold.speedLevel;
+    }
 
     private void Awake()
     {

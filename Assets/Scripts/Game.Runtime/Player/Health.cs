@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Health : MonoBehaviour
 {
-    
+    public Canvas gameOver;
     public int startingHealth =3;
     public int currentHealth;
 
@@ -43,7 +45,7 @@ public class Health : MonoBehaviour
     private void Death()
     {
         gameObject.SetActive(false);
-        
+        gameOver.enabled = true;// bật canvas gameover
     }
     private IEnumerator Invunerability()// bất tử
     {

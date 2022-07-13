@@ -9,33 +9,43 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     public TextMeshProUGUI textTotalGold;
+    public Canvas shopPannel;
     ShopData shopData;
-
+    
     [Header("SpeedBuff")]
     public TextMeshProUGUI textCostSpeed;
     public Button click;
     public Image sliceFull;
     public int costSpeed =1000;
-
-    void Start()
+    public SaveGold saveGold;
+    private void Awake()
+    {
+        saveGold = FindObjectOfType<SaveGold>();
+    }
+    void Start()// lúc bắt đầu game và lúc load scene
     {
         LoadShopData();// load speedLevel, totalGold
-        Load();
+        //shopData.totalGold = 100000;
+        shopData.totalGold += saveGold.totalGold; //lúc đầu game = 0 nên ko ảnh hưởng     
+        saveGold.speedLevel = shopData.speedLevel; //truyền vào saveGold lúc đầu game
+        Load();// load dữ liệu vào có save bên trong         
     }
     void TextTotalGold()
     {
         textTotalGold.text = $"GOLD {shopData.totalGold.ToString()}";
     }
-    public void UpSpeed()// gắn vào button speed khi click thì chạy    
+    public void UpSpeed()// gắn vào button speed chỉ chạy khi click  
     {
         if (shopData.speedLevel == 5) return;
 
-        if (shopData.totalGold > 1000)
+        if (shopData.totalGold >= costSpeed)
         {
             shopData.speedLevel++;
             shopData.totalGold -= costSpeed;
             Load();
-        };
+
+            saveGold.speedLevel = shopData.speedLevel;// truyền vào saveGold 
+        }
     }
     public void Load()
     {
@@ -60,5 +70,10 @@ public class Shop : MonoBehaviour
             shopData = new ShopData(0, 0);
             SaveShop.Save(shopData);
         }
+    }
+
+    public void Esc()
+    {
+        shopPannel.enabled = false;
     }
 }
