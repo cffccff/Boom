@@ -163,6 +163,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 94ca232ed7f4e5948b2cd2e8aef8ed07, type: 2}
   - {fileID: 11400000, guid: 87bcc81921d158641b382f754fffd7d8, type: 2}
   - {fileID: 11400000, guid: 3d7e0b21b268e3a4f829397d538d7b3f, type: 2}
+  - {fileID: 11400000, guid: b2c5ef57b2dab39479080c77c3892cf4, type: 2}
+  - {fileID: 11400000, guid: 16a2e4685a0580f4eb11ca9a18dd30cd, type: 2}
   tilemaps:
   - {fileID: 1370787339}
   - {fileID: 1658935802}
@@ -238,11 +240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944789073169949651, guid: c58bedb0f8180f24ea1db3a0326428c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4944789073169949651, guid: c58bedb0f8180f24ea1db3a0326428c6, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58bedb0f8180f24ea1db3a0326428c6, type: 3}
@@ -609,7 +611,6 @@ GameObject:
   - component: {fileID: 1658935800}
   - component: {fileID: 1658935802}
   - component: {fileID: 1658935801}
-  - component: {fileID: 1658935803}
   m_Layer: 6
   m_Name: Ground
   m_TagString: Walls
@@ -743,22 +744,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!19719996 &1658935803
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658935799}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0.00001
 --- !u!1 &1813454049
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1314845771205908868, guid: 1a2773d383b0ead488671a1265540a85, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1314845771205908875, guid: 1a2773d383b0ead488671a1265540a85, type: 3}
       propertyPath: m_RootOrder
