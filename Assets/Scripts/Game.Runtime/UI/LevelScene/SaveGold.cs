@@ -8,8 +8,11 @@ public class SaveGold : MonoBehaviour
     public UiGold uigold;
     //totalGold sẽ được scripts Shop lấy giá trị để save load
     public int totalGold;
-    // truyền giá trị vào scripts player ở scene playgame 
+
+    // truyền giá trị vào các script của player ở scene playgame 
     public int speedLevel;
+    public int bombLevel;
+    public int explosionLevel;
     private void Start()
     {
         

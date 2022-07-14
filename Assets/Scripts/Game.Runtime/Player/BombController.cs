@@ -9,14 +9,14 @@ public class BombController : MonoBehaviour
     public GameObject bombPrefab;
     public KeyCode inputKey = KeyCode.Space;
     public float bombFuseTime = 3f;
-    public int bombAmount = 1;// số lượng bom được phép đặt
+    public int bombAmount = 1;// số lượng bom tối đa được phép đặt
     private int bombsRemaining;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
-    public int explosionRadius = 1; // phạm vi boom nổ
+    public int explosionRadius = 1; // phạm vi boom nổ đầu game //itempick điều chỉnh khi ăn buff
     public Vector2 destroyPosition;
 
     [Header("Destructible")]
@@ -25,10 +25,24 @@ public class BombController : MonoBehaviour
     public Tile destructibleTile;
 
 
-    private void OnEnable()
+
+    public SaveGold saveGold;
+    private void Start()// cứ vào scene là truyền dữ liệu từ shop tới
     {
-        bombsRemaining = bombAmount;
+        saveGold = FindObjectOfType<SaveGold>();
+        resetBomb();
+        resetExplosion();
     }
+    public void resetBomb()
+    {
+        bombAmount = saveGold.bombLevel + 1;
+        bombsRemaining = bombAmount;        
+    }
+    public void resetExplosion()
+    {
+        explosionRadius = saveGold.explosionLevel + 1;
+    }
+
     private void Update()
     {
         if (bombsRemaining >0 && Input.GetKeyDown(inputKey))

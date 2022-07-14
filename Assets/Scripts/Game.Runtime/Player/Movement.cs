@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
         saveGold = FindObjectOfType<SaveGold>();
         resetBuff();
     }
-    public void resetBuff()
+    public void resetBuff()// dùng khi vừa vào scene và khi load map() chưa update
     {
         speed = initialSpeed + saveGold.speedLevel;
     }
@@ -39,11 +39,11 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(inputUp)) SetDirection(Vector2.up, spriteRendererUp);//nếu nhấn nút w truyển vector với coppoment up vào SetDirection
-        else if (Input.GetKey(inputDown)) SetDirection(Vector2.down, spriteRendererDown);
-        else if (Input.GetKey(inputLeft)) SetDirection(Vector2.left, spriteRendererLeft);
+        if      (Input.GetKey(inputUp))    SetDirection(Vector2.up, spriteRendererUp);//nếu nhấn nút w truyển vector với coppoment up vào SetDirection
+        else if (Input.GetKey(inputDown))  SetDirection(Vector2.down, spriteRendererDown);
+        else if (Input.GetKey(inputLeft))  SetDirection(Vector2.left, spriteRendererLeft);
         else if (Input.GetKey(inputRight)) SetDirection(Vector2.right, spriteRendererRight);
-        else SetDirection(Vector2.zero, activeSpriteRenderer);
+        else                               SetDirection(Vector2.zero, activeSpriteRenderer);
     }
     private void FixedUpdate()
     {

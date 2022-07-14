@@ -3,15 +3,17 @@
 public class ShopData
 {
     //public int totalGold, heart, bomb, explosion, speed;
-    public int totalGold, speedLevel;
+    public int totalGold, speedLevel, bombLevel, explosionLevel;
     public ShopData()
     {
 
     }
-    public ShopData(int totalGold, int speedLevel)
+    public ShopData(int totalGold, int speedLevel, int bombLevel, int explosionLevel)
     {
         this.speedLevel = speedLevel;
         this.totalGold = totalGold;
+        this.bombLevel = bombLevel;
+        this.explosionLevel = explosionLevel;
     }
 
 }
