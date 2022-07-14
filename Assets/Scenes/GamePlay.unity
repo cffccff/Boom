@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfLevel: 2
-  selectedLevel: 0
+  selectedLevel: 1
   tiles:
   - {fileID: 11400000, guid: 94ca232ed7f4e5948b2cd2e8aef8ed07, type: 2}
   - {fileID: 11400000, guid: 87bcc81921d158641b382f754fffd7d8, type: 2}
