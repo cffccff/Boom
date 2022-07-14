@@ -15,6 +15,7 @@ public class StartMenu : MonoBehaviour
     public GameObject InstructionMenu;
     public Button backOptionMenu;
     public Button backInstructionMenu;
+    public GameMusic gameMusic;
     private void Start()
     {
       playButton.onClick.AddListener(PlayGame);
@@ -50,7 +51,6 @@ public class StartMenu : MonoBehaviour
     }
     private void HideInstructionPanel()
     {
-      
         InstructionMenu.SetActive(false);
         MainMenu.SetActive(true);
     }

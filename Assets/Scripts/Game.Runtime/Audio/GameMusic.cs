@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using System;
-
 public class GameMusic : MonoBehaviour
 {
     [SerializeField] Slider musicSlider;
@@ -15,7 +14,8 @@ public class GameMusic : MonoBehaviour
   //  public AudioMixerSnapshot defaultSnapShot;
     const string MIXER_MUSIC = "MusicVolume";
     const string MIXER_SFX = "SFXVolume";
-    [SerializeField] AudioClip[] audioClip;
+    [SerializeField] AudioClip[] audioClips;
+    AudioClip clipPlay;
     public static GameMusic Instance { get; private set; }
     private void Awake()
     {
@@ -61,20 +61,27 @@ public class GameMusic : MonoBehaviour
         }
         SetMusicVolume(musicSlider.value);
         SetSFXVolume(SFXSlider.value);
-        PlayMusic();
+        PlayMusicBackGround();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
-    void PlayMusic()
+   public void PlayMusicBackGround()
     {
-
-        audioSource.clip = audioClip[0];
+        audioSource.Stop();
+        clipPlay = audioClips[0];
+        audioSource.clip = clipPlay;
         audioSource.Play();
-        audioSource.loop = true;
+    }
+    public void PlayMusicBattle()
+    {
+        audioSource.Stop();
+        clipPlay = audioClips[1];
+        audioSource.clip = clipPlay;
+        audioSource.Play();
 
     }
 }
