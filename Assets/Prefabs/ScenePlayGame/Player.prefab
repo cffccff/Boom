@@ -446,7 +446,7 @@ MonoBehaviour:
   destroyPosition: {x: 0, y: 0}
   destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
-  destructibleTile: {fileID: 11400000, guid: e53a1ba293b66504ab962f9fa168f42c, type: 2}
+  destructibleTile: {fileID: 11400000, guid: a8cc271217c27e14ca7322328ad6b5db, type: 2}
   saveGold: {fileID: 0}
 --- !u!114 &1314845771205908878
 MonoBehaviour:
