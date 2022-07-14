@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 1_19
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 44e3c599fed00594f8e62b495cc3a1cc, type: 2}
-  id: GroundShadow
+  id: 1_19
   tilemap: 0
