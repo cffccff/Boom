@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         // countEnemy = enemys.Length;
         enemies = GameObject.Find("Enemies");
         countEnemy = enemies.transform.childCount;
+        Debug.Log("Enemy total:" + countEnemy);
     }
     public void CheckWinStage()// nếu enemy chết thì truyền vào đây
     {
