@@ -58,7 +58,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(PlayerPrefs.GetInt("currentLevel"));
+            Debug.Log(PlayerPrefs.GetInt("SeletedLevel"));
         }
     }
     /// <summary>
@@ -70,7 +70,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
         _data = new List<LevelMapData>();
         int currentLevel;
         int totalStar = 0;
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             currentLevel = PlayerPrefs.GetInt("currentLevel");
@@ -78,7 +78,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
         else
         {
            
-            PlayerPrefs.SetInt("currentLevel", 1);
+            PlayerPrefs.SetInt("currentLevel", 10);
             currentLevel = PlayerPrefs.GetInt("currentLevel");
 
         }
@@ -157,6 +157,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
         scroller.ReloadData();
         totalStarTxt.text = totalStar.ToString();
         ViewCurrentLevel();
+       
     }
     public void ViewCurrentLevel()
     {

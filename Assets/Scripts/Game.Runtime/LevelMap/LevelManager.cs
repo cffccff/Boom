@@ -8,7 +8,7 @@ using System.IO;
 public class LevelManager : MonoBehaviour
 {
     public int numberOfLevel = 2;
-    public int currentLevel = 1;
+    public int selectedLevel ;
     public static LevelManager instance;
     
     private void Awake()
@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-       // LoadLevel();
+        LoadLevel();
     }
     private void Update()
     {
@@ -102,8 +102,11 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        //currentLevel++;
-        var levels = $"Levels/Level{currentLevel}";
+        selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
+        Debug.Log("current level: " + selectedLevel);
+      
+
+        var levels = $"Levels/Level{selectedLevel}";
         //load the json file to a leveldata
         string json = Resources.Load<TextAsset>(levels).text; //chuyển đổi từ file json sang string.
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);

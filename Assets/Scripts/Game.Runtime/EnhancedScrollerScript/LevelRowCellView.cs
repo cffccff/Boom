@@ -28,18 +28,11 @@ using UnityEngine.UI;
 
             if (data != null)
             {
-                if (data.levelTxt == "1")
-                {
-                    text.text = "Tutorial";
-                    level = 1;
-                    text.fontSize = 30;
-                }
-                else
-                {
+               
                     // set the text if the cell is inside the data range
                     text.text = data.levelTxt;
                 text.fontSize = 50;
-            }
+            
             if (data.isUnLock == true)
             {
                 unlockImage.enabled = false;
@@ -61,6 +54,7 @@ using UnityEngine.UI;
             if (level != 1)
             {
                 level = int.Parse(data.levelTxt);
+             
             }
             if (int.Parse(data.levelTxt) % 4 == 0&& int.Parse(data.levelTxt)!=LevelMapController.totalLevel)
             {
