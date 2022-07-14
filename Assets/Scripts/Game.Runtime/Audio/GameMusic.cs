@@ -11,10 +11,11 @@ public class GameMusic : MonoBehaviour
     [SerializeField] Slider SFXSlider;
     [SerializeField] AudioMixer mixer;
     [SerializeField] AudioSource audioSource;
-    public AudioMixerSnapshot audioMixerSnapshotDead;
-    public AudioMixerSnapshot defaultSnapShot;
+  //  public AudioMixerSnapshot audioMixerSnapshotDead;
+  //  public AudioMixerSnapshot defaultSnapShot;
     const string MIXER_MUSIC = "MusicVolume";
     const string MIXER_SFX = "SFXVolume";
+    [SerializeField] AudioClip[] audioClip;
     public static GameMusic Instance { get; private set; }
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class GameMusic : MonoBehaviour
 
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         SFXSlider.onValueChanged.AddListener(SetSFXVolume);
-        defaultSnapShot.TransitionTo(0.001f);
+       // defaultSnapShot.TransitionTo(0.001f);
     }
 
     private void SetMusicVolume(float value)
@@ -55,16 +56,25 @@ public class GameMusic : MonoBehaviour
         {
             musicSlider.value = musicSlider.maxValue;
             SFXSlider.value = SFXSlider.maxValue;
+            PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+            PlayerPrefs.SetFloat("MusicVolume", SFXSlider.value);
         }
         SetMusicVolume(musicSlider.value);
         SetSFXVolume(SFXSlider.value);
-        audioSource.Play();
-        audioSource.loop = true;
+        PlayMusic();
     }
 
     // Update is called once per frame
     void Update()
     {
        
+    }
+    void PlayMusic()
+    {
+
+        audioSource.clip = audioClip[0];
+        audioSource.Play();
+        audioSource.loop = true;
+
     }
 }
