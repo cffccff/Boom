@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        //LoadLevel();
+        LoadLevel();
     }
     private void Update()
     {
@@ -94,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level3.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level4.json", json);
 
         //debug
         Debug.Log("Level was saved");
@@ -102,8 +102,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        selectedLevel = 3;
-        //selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
+        //selectedLevel = 3;
+        selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
         Debug.Log("current level: " + selectedLevel);
       
 
