@@ -7,8 +7,8 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    public int numberOfLevels = 2;
-    public int curentLevels = 1;
+    public int numberOfLevel = 2;
+    public int currentLevel = 1;
     public static LevelManager instance;
     private void Awake()
     {
@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Levels/Level2.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level3.json", json);
 
         //debug
         Debug.Log("Level was saved");
@@ -101,10 +101,10 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        curentLevels++;
-        var levels = "Levels/Level" + curentLevels;
+        currentLevel++;
+        var levels = $"Levels/Level{currentLevel}";
         //load the json file to a leveldata
-        var json = Resources.Load<TextAsset>(levels).text; //chứa đường dẫn đến thư mục dữ liệu trò chơi trên thiết bị đích
+        string json = Resources.Load<TextAsset>(levels).text; //chuyển đổi từ file json sang string.
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
 
         foreach (var data in levelData.layers)
@@ -124,6 +124,7 @@ public class LevelManager : MonoBehaviour
 
         //debug
         Debug.Log("Level was loaded");
+    
     }
 }
 

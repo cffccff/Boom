@@ -25,5 +25,7 @@ public class GameManager : MonoBehaviour
     private void NextLevel()// chuyển qua màn tiếp theo
     {
         levelManager.LoadLevel();
+
+        FindObjectOfType<SaveGold>().saveGold();//truyền vàng kiểm đc của màn trước vào saveGold
     }
 }

@@ -13,7 +13,7 @@ public class Explosion : MonoBehaviour
     {
         BombController = FindObjectOfType<BombController>();
     }
-    public void SetActiveRenderer(AnimatedSprite renderer)// bật component truyền vào và tắt component khác
+    public void SetActiveRenderer(AnimatedSprite renderer)// bật component script animation truyền vào và tắt component khác
     {
         start.enabled = renderer == start;
         middle.enabled = renderer == middle;
