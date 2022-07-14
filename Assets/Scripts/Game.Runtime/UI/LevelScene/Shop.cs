@@ -40,7 +40,7 @@ public class Shop : MonoBehaviour
         //shopData.speedLevel = 0;
         //shopData.bombLevel = 0;
         //shopData.explosionLevel = 0;
-        
+
 
         shopData.totalGold += saveGold.totalGold; //lúc đầu game = 0 nên ko ảnh hưởng// 
         saveGold.totalGold = 0;// load lại scene sau khi + vào totalGold thì reset
