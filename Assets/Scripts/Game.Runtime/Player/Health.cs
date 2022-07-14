@@ -32,7 +32,8 @@ public class Health : MonoBehaviour
     public void takeDamage()
     {
         currentHealth--;
-        //StartCoroutine(Invunerability());
+        
+        StartCoroutine(Invunerability());
 
         if (currentHealth <= 0)
         {
@@ -41,7 +42,9 @@ public class Health : MonoBehaviour
             activeSpriteDeath.enabled = true;
 
             Invoke(nameof(Death), 1.25f);
-        }       
+        }
+        if (currentHealth <= 1) return;
+        transform.position = new Vector3(1, 0, 0);
     }
     private void Death()
     {

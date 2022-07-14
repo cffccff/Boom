@@ -142,6 +142,7 @@ public class BaseEnemy : MonoBehaviour
             if (currentHealth <= 0)
             {
                 moveSpeed = 0f;
+                coll.isTrigger = true;
                 Invoke(nameof(DestroyObject), 1.2f);
             }
         }
