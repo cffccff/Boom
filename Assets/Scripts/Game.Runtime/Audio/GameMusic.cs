@@ -19,11 +19,18 @@ public class GameMusic : MonoBehaviour
     public static GameMusic Instance { get; private set; }
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+
+            
+        }
+        else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
+       
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         SFXSlider.onValueChanged.AddListener(SetSFXVolume);
        // defaultSnapShot.TransitionTo(0.001f);

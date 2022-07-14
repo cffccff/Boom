@@ -5,21 +5,26 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public LevelManager levelManager;
-    public GameObject[] enemys;
+   // public GameObject[] enemys;
+    [SerializeField] GameObject victoryPanel;
+    private GameObject enemies;
+    [SerializeField] GameObject losePanel;
     //public Transform enemyParent;
-    public int countEnemy;
+    private int countEnemy;
     private void Start()
     {
 
-        enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        countEnemy = enemys.Length;
+        // enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        // countEnemy = enemys.Length;
+        enemies = GameObject.Find("Enemies");
+        countEnemy = enemies.transform.childCount;
     }
     public void CheckWinStage()// nếu enemy chết thì truyền vào đây
     {
         countEnemy--;
         if (countEnemy <= 0)
         {
-            Invoke(nameof(NextLevel), 1f);
+            victoryPanel.SetActive(true);
         }
     }
     private void NextLevel()// chuyển qua màn tiếp theo

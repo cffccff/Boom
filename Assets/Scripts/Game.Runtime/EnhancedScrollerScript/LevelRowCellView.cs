@@ -79,8 +79,8 @@ using UnityEngine.UI;
         if (unlockImage.enabled == false)
         {
             PlayerPrefs.SetInt("SelectedLevel", level);
-            
-           
+
+            GameMusic.Instance.PlayMusicBattle();
             SceneManager.LoadScene("GamePlay");
         }
 
