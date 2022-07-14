@@ -135,7 +135,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-
+            if (currentHealth == 0) return;
             StartCoroutine(Hurt());
 
             currentHealth--;
