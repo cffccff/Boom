@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 public class ShopIcon : MonoBehaviour, IPointerClickHandler
 {
     public Canvas shopPannel;
+    public Canvas CanvasLevel;
     public void OnPointerClick(PointerEventData eventData)
     {
         shopPannel.enabled = true;
+        shopPannel.enabled = false;
+
     }
 }

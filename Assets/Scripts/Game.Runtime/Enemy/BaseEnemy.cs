@@ -23,6 +23,7 @@ public class BaseEnemy : MonoBehaviour
    [SerializeField] bool directionChosen = false;
 
    private int index;
+    public GameManager gameManager;
 
    private Vector2 movement;
     private float count;
@@ -33,6 +34,7 @@ public class BaseEnemy : MonoBehaviour
     }
     private void SetUpReference()
     {
+        gameManager = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
@@ -160,7 +162,9 @@ public class BaseEnemy : MonoBehaviour
     }
     private void DestroyObject()
     {
-        Destroy(gameObject);
+        gameManager.CheckWinStage();
+        gameObject.SetActive(false);
+
     }
 
 }

@@ -158,11 +158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfLevel: 2
-  currentLevel: 2
+  currentLevel: 1
   tiles:
   - {fileID: 11400000, guid: 94ca232ed7f4e5948b2cd2e8aef8ed07, type: 2}
   - {fileID: 11400000, guid: 87bcc81921d158641b382f754fffd7d8, type: 2}
   - {fileID: 11400000, guid: 3d7e0b21b268e3a4f829397d538d7b3f, type: 2}
+  - {fileID: 11400000, guid: b2c5ef57b2dab39479080c77c3892cf4, type: 2}
+  - {fileID: 11400000, guid: 16a2e4685a0580f4eb11ca9a18dd30cd, type: 2}
   tilemaps:
   - {fileID: 1370787339}
   - {fileID: 1658935802}
@@ -242,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944789073169949651, guid: c58bedb0f8180f24ea1db3a0326428c6, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c58bedb0f8180f24ea1db3a0326428c6, type: 3}
