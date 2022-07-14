@@ -4,29 +4,44 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public float speed;
-    public Vector2 direction;
+    private float moveSpeed = 5;
+    private Vector2 direction;
+    private Vector2 movement;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>(); 
         direction = Vector2.up;
+    }
+    private void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+        {
+            movement.y = 0;
+        }
+        else
+        {
+            movement.x = 0;
+        }
+        if (movement.x >= 1) spriteRenderer.flipX = true;
+        else spriteRenderer.flipX = false;
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
     private void FixedUpdate()
     {
-        rb.velocity = direction * speed;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+   
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Walls"))
-        {
-            transform.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
-            if (direction == Vector2.up)    direction = Vector2.right;
-            else if (direction == Vector2.right) direction = Vector2.down;
-            else if (direction == Vector2.down)  direction = Vector2.left;
-            else if (direction == Vector2.left)  direction = Vector2.up;          
-        }   
-        
-    }
+   
 
 }
