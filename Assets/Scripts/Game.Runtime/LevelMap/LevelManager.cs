@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        LoadLevel();
+        //LoadLevel();
     }
     private void Update()
     {
@@ -102,7 +102,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
+        selectedLevel = 3;
+        //selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
         Debug.Log("current level: " + selectedLevel);
       
 
