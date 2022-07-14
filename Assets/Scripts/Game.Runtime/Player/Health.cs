@@ -26,12 +26,13 @@ public class Health : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
             takeDamage();
+            Debug.Log("bi dinh bom");
         }
     }
-    private void takeDamage()
+    public void takeDamage()
     {
         currentHealth--;
-        StartCoroutine(Invunerability());
+        //StartCoroutine(Invunerability());
 
         if (currentHealth <= 0)
         {
@@ -50,9 +51,11 @@ public class Health : MonoBehaviour
     private IEnumerator Invunerability()// bất tử
     {
         Physics2D.IgnoreLayerCollision(8, 9, true); // bỏ qua va chạm layer (player and explotion)
+        Physics2D.IgnoreLayerCollision(9, 13, true);
 
         yield return new WaitForSeconds(iFramesDuration);
 
         Physics2D.IgnoreLayerCollision(8, 9, false);
+        Physics2D.IgnoreLayerCollision(9, 13, false);
     }
 }

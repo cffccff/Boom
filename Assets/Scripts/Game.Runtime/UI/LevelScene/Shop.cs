@@ -9,7 +9,7 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     public TextMeshProUGUI textTotalGold;
-    public Canvas shopPannel;
+    public GameObject shopPannel;
     ShopData shopData;
     
     [Header("SpeedBuff")]
@@ -32,11 +32,21 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         saveGold = FindObjectOfType<SaveGold>();
+        LoadShopData();// load speedLevel, totalGold
+
+        shopData.totalGold += saveGold.totalGold; //lúc đầu game = 0 nên ko ảnh hưởng// 
+        saveGold.totalGold = 0;// load lại scene sau khi + vào totalGold thì reset
+
+        saveGold.speedLevel = shopData.speedLevel; //truyền vào saveGold lúc đầu game
+        saveGold.bombLevel = shopData.bombLevel;
+        saveGold.explosionLevel = shopData.explosionLevel;
+
+        Load();// load dữ liệu vào có save bên trong         
     }
     void Start()// lúc bắt đầu game và lúc load scene
     {
         LoadShopData();// load speedLevel, totalGold
-        //shopData.totalGold = 1000000;
+        //shopData.totalGold = 5000;
         //shopData.speedLevel = 0;
         //shopData.bombLevel = 0;
         //shopData.explosionLevel = 0;
@@ -135,6 +145,6 @@ public class Shop : MonoBehaviour
 
     public void Esc()
     {
-        shopPannel.enabled = false;
+        shopPannel.SetActive(false);
     }
 }

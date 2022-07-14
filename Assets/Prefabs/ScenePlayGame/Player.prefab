@@ -465,7 +465,7 @@ MonoBehaviour:
   currentHealth: 0
   activeSpriteDeath: {fileID: 1314845770670612374}
   movement: {fileID: 1314845771205908872}
-  iFramesDuration: 2
+  iFramesDuration: 1
 --- !u!1 &1314845771811014267
 GameObject:
   m_ObjectHideFlags: 0

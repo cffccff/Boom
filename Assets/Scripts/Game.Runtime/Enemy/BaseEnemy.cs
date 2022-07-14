@@ -27,8 +27,14 @@ public class BaseEnemy : MonoBehaviour
 
    private Vector2 movement;
     private float count;
+
+    [Header("Gold")]
+    [SerializeField] int gold = 100;
+    private UiGold uiGold;
     void Start()
     {
+        uiGold = FindObjectOfType<UiGold>();
+
         SetUpReference();
         SetUpStat();
     }
@@ -147,7 +153,14 @@ public class BaseEnemy : MonoBehaviour
         }
 
     }
-  
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            FindObjectOfType<Health>().takeDamage();
+        }
+    }
+
     private IEnumerator Hurt()
     {
         for (float i = 0; i <= 0.5; i += 0.1f)
@@ -164,6 +177,7 @@ public class BaseEnemy : MonoBehaviour
     {
         gameManager.CheckWinStage();
         gameObject.SetActive(false);
+        uiGold.addGold(gold);
 
     }
 

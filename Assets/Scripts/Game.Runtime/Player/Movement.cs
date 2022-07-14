@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Rigidbody2D rigidbody { get; private set; }
+    public Rigidbody2D rigidbodyPlayer { get; private set; }
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
     float initialSpeed = 5f;
@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
     private void Start()// cứ vào scene là truyền dữ liệu từ shop tới
     {
         saveGold = FindObjectOfType<SaveGold>();
+        rigidbodyPlayer = GetComponent<Rigidbody2D>();
         resetBuff();
     }
     public void resetBuff()// dùng khi vừa vào scene và khi load map() chưa update
@@ -34,7 +35,6 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
         activeSpriteRenderer = spriteRendererDown;
     }
     private void Update()
@@ -47,10 +47,10 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector2 position = rigidbody.position; //vị trí theo rigi
+        Vector2 position = rigidbodyPlayer.position; //vị trí theo rigi
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
 
-        rigidbody.MovePosition(position + translation);// di chuyển nhân vật theo hướng
+        rigidbodyPlayer.MovePosition(position + translation);// di chuyển nhân vật theo hướng
     }
     private void SetDirection(Vector2 newDirection, AnimatedSprite spriteRenderer) //
     {

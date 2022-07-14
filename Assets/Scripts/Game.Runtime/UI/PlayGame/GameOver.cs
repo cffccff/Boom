@@ -9,6 +9,6 @@ public class GameOver : MonoBehaviour
     public Button playAgain;
     public void loadLevelsSence()
     {
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("LevelMap");
     }
 }
