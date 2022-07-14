@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public int numberOfLevel = 2;
     public int currentLevel = 1;
     public static LevelManager instance;
+    
     private void Awake()
     {
         //set up the instance
@@ -40,7 +41,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        
+       // LoadLevel();
     }
     private void Update()
     {
@@ -93,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level3.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level1.json", json);
 
         //debug
         Debug.Log("Level was saved");
@@ -101,7 +102,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        currentLevel++;
+        //currentLevel++;
         var levels = $"Levels/Level{currentLevel}";
         //load the json file to a leveldata
         string json = Resources.Load<TextAsset>(levels).text; //chuyển đổi từ file json sang string.
