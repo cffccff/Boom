@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 31
+  controlID: 146
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 41
+  controlID: 147
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -166,14 +166,14 @@ MonoBehaviour:
     y: 0
     width: 801
     height: 450
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 450
     width: 801
     height: 497
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -220,8 +220,8 @@ MonoBehaviour:
     y: 0
     width: 278
     height: 947
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f8270100
-      m_LastClickedID: 0
-      m_ExpandedIDs: 48affeff9aaffeff66b0feff4eb2feff7ebafeffacc1feff0ec2feff74d2feff40d4feff6ce5feffbae9feff14eafeff42edfefff422ffff8c2bffff4234ffff1445ffffd46effffb4adfffff2aeffff6ed5ffff02d7ffff6cdfffff2cfbffff2aa80000e4d4000002e3000042e60000d212010080270100
+      m_SelectedIDs: dceafdff
+      m_LastClickedID: -136484
+      m_ExpandedIDs: b6e0fdffe2eafdffe4eafdff64eefdffaaeefdff4e0cfefffe14feff4415feffea52feffec52feff5c57feff0869feff0a69feffbc6efeffa898feff86a2feff88a2fefffeadfeff18bffeff22c6feff86c7feff9ccffeff5ad1fefffcd4feffd027ffffd227fffffa2dffff307cffff3685ffff3885ffffa886ffff5094ffff369bffff609cffffda9dffffaeb5ffffb0b5ffff3ab7fffffabfffff18c8ffffdcd1ffffbadaffff90edffff26f7ffff2cfbfffff4fffffff0860000e88c00000e8d0000288d0000348d00009e8d0000ae9400009c990000c2990000dc990000e8990000f4990000bc9e0000e29e0000ee9e000084a800003ab8000082b80000a8b80000c2b80000ceb80000dab800007cc200008ac20000d8c4000024e80000c2110100ee11010024120100b412010090140100f2140100821501004e1c0100de1c010016280100482801004e2801005c2801008c280100a0280100c8280100524501007845010084450100f05101000a52010016520100225201005e6f01006a6f01009a6f0100b86f0100d26f0100de6f0100ea6f0100f8860100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -583,9 +583,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.069326, y: 5.1155334, z: 0.052713342}
+    m_Target: {x: 1005.3288, y: 364.08594, z: -0.67680806}
     speed: 2
-    m_Value: {x: 6.069326, y: 5.1155334, z: 0.052713342}
+    m_Value: {x: 1005.3288, y: 364.08594, z: -0.67680806}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -636,9 +636,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.88102
+    m_Target: 125.74937
     speed: 2
-    m_Value: 7.88102
+    m_Value: 125.74937
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -686,7 +686,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 800
-    height: 428
+    height: 429
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -847,7 +847,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: level
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -859,36 +859,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Enemy
+    - Assets/Prefabs/Enemies
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: level
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Enemy
+  - Assets/Prefabs/Enemies
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Boom
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f4270100
-    m_LastClickedID: 75764
-    m_ExpandedIDs: 00000000b6630000b8630000ba630000d0630000de6300009c65000000ca9a3bffffff7f
+    m_SelectedIDs: f0650000
+    m_LastClickedID: 26096
+    m_ExpandedIDs: 00000000586400005a6400005c6400005e6400008064000088640000d870000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Enemies
+      m_OriginalName: Enemies
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 26096
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -902,7 +902,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b6630000b8630000ba630000bc630000
+    m_ExpandedIDs: 00000000586400005a6400005c6400005e6400006064000062640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -933,15 +933,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 225a00005e5a000000000000fa5b0000b65c0000d61b01005a5b0000429e0000ce590000d67200000c660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Enemy
-      m_OriginalName: Enemy
+      m_Name: GamePlay
+      m_OriginalName: GamePlay
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 75764
+      m_UserData: 28086
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116e00dbeffe38343a07db73c4fe2454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfLevel: 2
+  numberOfLevel: 6
   selectedLevel: 1
   tiles:
   - {fileID: 11400000, guid: 94ca232ed7f4e5948b2cd2e8aef8ed07, type: 2}

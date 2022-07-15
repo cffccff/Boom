@@ -13,7 +13,8 @@ public class Victory : MonoBehaviour
     }
     public void nextLevel()
     {
-        LevelManager.instance.loadNextData();
+        Movement.instance.transform.position = new Vector2 (1, 0);
+        LevelManager.instance.loadNextData();        
         gameObject.SetActive(false);
         Time.timeScale = 1;        
     }

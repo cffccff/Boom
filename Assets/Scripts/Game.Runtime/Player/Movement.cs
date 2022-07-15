@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
+    public static Movement instance;
+    public GameObject UI;
+
     public Rigidbody2D rigidbodyPlayer { get; private set; }
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
@@ -39,6 +43,12 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            UI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
         if      (Input.GetKey(inputUp))    SetDirection(Vector2.up, spriteRendererUp);//nếu nhấn nút w truyển vector với coppoment up vào SetDirection
         else if (Input.GetKey(inputDown))  SetDirection(Vector2.down, spriteRendererDown);
         else if (Input.GetKey(inputLeft))  SetDirection(Vector2.left, spriteRendererLeft);

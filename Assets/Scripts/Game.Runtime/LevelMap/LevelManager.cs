@@ -7,9 +7,9 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    public int numberOfLevel = 2;
+    public int numberOfLevel = 6;
     public int selectedLevel ;
-    public static LevelManager instance;
+    public static LevelManager instance;//singleton
     
     private void Awake()
     {
@@ -112,7 +112,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        //selectedLevel = 3;
+        if (selectedLevel > numberOfLevel) selectedLevel = numberOfLevel;
         
         Debug.Log("current level: " + selectedLevel);
       
