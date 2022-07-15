@@ -39,6 +39,8 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null) instance = this;
+
         activeSpriteRenderer = spriteRendererDown;
     }
     private void Update()
