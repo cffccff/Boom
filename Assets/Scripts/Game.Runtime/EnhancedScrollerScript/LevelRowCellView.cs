@@ -80,7 +80,7 @@ using UnityEngine.UI;
         {
             PlayerPrefs.SetInt("SelectedLevel", level);
 
-            GameMusic.Instance.PlayMusicBattle();
+            //GameMusic.Instance.PlayMusicBattle();
             SceneManager.LoadScene("GamePlay");
         }
 

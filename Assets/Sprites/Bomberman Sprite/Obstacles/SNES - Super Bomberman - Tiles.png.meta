@@ -128,15 +128,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_0
+      name: House
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1060
-        height: 682
+        x: 475
+        y: 634
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,6 +144,27 @@ TextureImporter:
       bones: []
       spriteID: 9eb2fb79cab3a4845931eb75cb42a414
       internalID: 1285752396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 634
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0134f4e9d77c884795300e6a3faf990
+      internalID: 1313832990
       vertices: []
       indices: 
       edges: []
@@ -159,7 +180,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SNES - Super Bomberman - Tiles_0: 1285752396
+      Tree: 1313832990
+      House: 1285752396
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

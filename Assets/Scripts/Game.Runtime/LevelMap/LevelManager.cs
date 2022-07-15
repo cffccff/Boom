@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        LoadLevel();
+       LoadLevel();
     }
     private void Update()
     {
@@ -94,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level4.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level6.json", json);
 
         //debug
         Debug.Log("Level was saved");
@@ -126,7 +126,6 @@ public class LevelManager : MonoBehaviour
                 if (tile) tilemap.SetTile(new Vector3Int(data.poses_x[i], data.poses_y[i], 0), tile);
             }
         }
-
         //debug
         Debug.Log("Level was loaded");
     
