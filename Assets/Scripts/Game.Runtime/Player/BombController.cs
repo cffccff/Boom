@@ -11,6 +11,7 @@ public class BombController : MonoBehaviour
     public float bombFuseTime = 3f;
     public int bombAmount = 1;// số lượng bom tối đa được phép đặt
     private int bombsRemaining;
+    private AudioSource bombAudio;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
@@ -29,6 +30,7 @@ public class BombController : MonoBehaviour
     public SaveGold saveGold;
     private void Start()// cứ vào scene là truyền dữ liệu từ shop tới
     {
+        bombAudio = GetComponent<AudioSource>();
         saveGold = FindObjectOfType<SaveGold>();
         resetBomb();
         resetExplosion();
@@ -46,7 +48,7 @@ public class BombController : MonoBehaviour
     private void Update()
     {
         if (bombsRemaining >0 && Input.GetKeyDown(inputKey))
-        {
+        {           
             StartCoroutine(PlaceBomb());
         }
     }
@@ -75,6 +77,8 @@ public class BombController : MonoBehaviour
         Explode(position, Vector2.down, explosionRadius);
         Explode(position, Vector2.left, explosionRadius);
         Explode(position, Vector2.right, explosionRadius);
+
+        bombAudio.Play();
 
         Destroy(bomb);
         bombsRemaining++;
