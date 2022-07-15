@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Canvas gameOver;
+    public GameObject gameOver; // truyeefn screen Lose vao
     public int startingHealth =3;
     public int currentHealth;
 
@@ -49,7 +49,8 @@ public class Health : MonoBehaviour
     private void Death()
     {
         gameObject.SetActive(false);
-        gameOver.enabled = true;// bật canvas gameover
+        gameOver.SetActive(true);// bật canvas gameover
+        Time.timeScale = 0;// pause
     }
     private IEnumerator Invunerability()// bất tử
     {

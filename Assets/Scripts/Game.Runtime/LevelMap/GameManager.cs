@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private GameObject enemies;
     [SerializeField] GameObject losePanel;
     //public Transform enemyParent;
-    private int countEnemy;
+    public int countEnemy;
     private void Start()
     {
 
@@ -26,12 +26,14 @@ public class GameManager : MonoBehaviour
         if (countEnemy <= 0)
         {
             victoryPanel.SetActive(true);
+            Time.timeScale = 0; 
+            saveGold();
         }
-    }
-    private void NextLevel()// chuyển qua màn tiếp theo
-    {
-        levelManager.LoadLevel();
 
-        FindObjectOfType<SaveGold>().saveGold();//truyền vàng kiểm đc của màn trước vào saveGold
+    }
+    void saveGold()
+    {
+        Debug.Log("hien thi");
+        FindObjectOfType<SaveGold>().saveGold();
     }
 }

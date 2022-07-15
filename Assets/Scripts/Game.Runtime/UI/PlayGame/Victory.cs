@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
-{
-    public Button playAgain;
+public class Victory : MonoBehaviour
+{    
     public void loadLevelsSence()
     {
         SceneManager.LoadScene("LevelMap");
         Time.timeScale = 1;
+    }
+    public void nextLevel()
+    {
+        LevelManager.instance.loadNextData();
+        gameObject.SetActive(false);
+        Time.timeScale = 1;        
     }
     public void reloadLevel()
     {
@@ -19,4 +24,5 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }
+
 }

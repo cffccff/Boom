@@ -20,8 +20,14 @@ public class SaveGold : MonoBehaviour
     public void saveGold() //
     {
         uigold = FindObjectOfType<UiGold>();
-        totalGold += uigold.gold; //cộng gold vào totalGold
-    }
+        StartCoroutine (Wait()); // phải dùng néu không gold + sai
 
+    }
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.01f);
+        totalGold += uigold.gold;
+        
+    }
 
 }
