@@ -4,22 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public LevelManager levelManager;
-   // public GameObject[] enemys;
+    public GameObject[] enemys;
     [SerializeField] GameObject victoryPanel;
     private GameObject enemies;
-    [SerializeField] GameObject losePanel;
-    //public Transform enemyParent;
+
+    //Load Enemy
+    public GameObject[] enemyLevels;
+    bool active;
+
     public int countEnemy;
     private void Start()
     {
+        enemyLevels = new GameObject[transform.childCount];// cấp phát vùng nhớ
 
-        // enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        // countEnemy = enemys.Length;
-        enemies = GameObject.Find("Enemies");
-        countEnemy = enemies.transform.childCount;
-        Debug.Log("Enemy total:" + countEnemy);
+        enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        countEnemy = enemys.Length;
+        //enemies = GameObject.Find("Enemies");
+        //countEnemy = enemies.transform.childCount;
+        //Debug.Log("Enemy total:" + countEnemy);
+        loadEnemy();
     }
+    public void loadEnemy()
+    {       
+        for (int i = 0; i < transform.childCount; i++)
+
+        {
+            enemyLevels[i] = transform.GetChild(i).gameObject;
+            enemyLevels[i].SetActive(active = PlayerPrefs.GetInt("SelectedLevel") == i + 1);
+        }
+    }
+
     public void CheckWinStage()// nếu enemy chết thì truyền vào đây
     {
         countEnemy--;
@@ -29,7 +43,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0; 
             saveGold();
         }
-
     }
     void saveGold()
     {

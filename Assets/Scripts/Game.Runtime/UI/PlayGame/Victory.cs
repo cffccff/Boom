@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
-{    
+{
     public void loadLevelsSence()
     {
         SceneManager.LoadScene("LevelMap");
@@ -14,6 +14,9 @@ public class Victory : MonoBehaviour
     public void nextLevel()
     {
         Movement.instance.transform.position = new Vector2 (1, 0);
+
+        gameObject.GetComponentInParent<RemoveItem>().remove();
+
         LevelManager.instance.loadNextData();        
         gameObject.SetActive(false);
         Time.timeScale = 1;        
