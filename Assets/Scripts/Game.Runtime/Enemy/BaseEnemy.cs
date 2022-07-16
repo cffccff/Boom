@@ -8,7 +8,7 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] private float moveSpeed=2f;
     [SerializeField] private int maxHealth=1;
     [SerializeField] private int currentHealth;
-    private Tilemap tilemap;
+    protected Tilemap tilemap;
 
     private Animator animator;
 
@@ -20,7 +20,7 @@ public class BaseEnemy : MonoBehaviour
     public GameObject[] wallChecks = new GameObject[4]; // bottom, top, right, left
     readonly int[,] directions = new int[,] { { 0, -1 }, { 0, 1 }, { 1, 0 }, { -1, 0 } }; // bottom, top, right, left
 
-   [SerializeField] bool directionChosen = false;
+   [SerializeField] protected bool directionChosen = false;
 
    private int index;
     public GameManager gameManager;
@@ -54,7 +54,7 @@ public class BaseEnemy : MonoBehaviour
         currentHealth = maxHealth;
        
     }
-    void Update()
+    protected virtual void Update()
     {
        
       
@@ -106,7 +106,7 @@ public class BaseEnemy : MonoBehaviour
         directionChosen = true;
     }
 
-   private bool ObstacleThere(GameObject check)
+    protected virtual bool ObstacleThere(GameObject check)
     {
         ///Decide, if obstacle is at a position of the enemy wallCheck object
         Vector3 worldPos = check.transform.position;
@@ -131,7 +131,7 @@ public class BaseEnemy : MonoBehaviour
         return false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
@@ -154,7 +154,7 @@ public class BaseEnemy : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {

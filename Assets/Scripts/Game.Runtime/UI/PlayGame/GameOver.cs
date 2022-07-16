@@ -9,14 +9,15 @@ public class GameOver : MonoBehaviour
     public Button playAgain;
     public void loadLevelsSence()
     {
+        GameMusic.Instance.PlayMusicBackGround();
         SceneManager.LoadScene("LevelMap");
         Time.timeScale = 1;
     }
     public void reloadLevel()
     {
         SceneManager.LoadScene("GamePlay");
-        LevelManager.instance.LoadLevel();
-        gameObject.SetActive(false);
+       // LevelManager.instance.LoadLevel();
+       // gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 }

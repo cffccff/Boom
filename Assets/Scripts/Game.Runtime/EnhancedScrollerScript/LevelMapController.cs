@@ -50,16 +50,13 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
     {
         // tell the scroller that this script will be its delegate
         scroller.Delegate = this;
-
+     
         // load in a large set of data
         LoadData();
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("StartMenu");
-        }
+        
     }
     /// <summary>
     /// Populates the data with a lot of records
@@ -167,7 +164,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
 
 
 
-        Debug.Log(jumpDataIndex);
+      
         // extract the integer from the input text
 
         // jump to the index

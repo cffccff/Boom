@@ -79,11 +79,11 @@ public class GameMusic : MonoBehaviour
         {
             musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
             SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-            Debug.Log("1");
+           
         }
         else
         {
-            Debug.Log("2");
+          
             musicSlider.value = musicSlider.maxValue;
             SFXSlider.value = SFXSlider.maxValue;
             PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
@@ -93,10 +93,7 @@ public class GameMusic : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("MusicVolume: " + PlayerPrefs.GetFloat("MusicVolume"));
-        }
+        
         
     }
     public void SetValueSliderMixer()
