@@ -72,6 +72,7 @@ public class BaseEnemy : MonoBehaviour
         }
         if (ObstacleThere(wallChecks[index]))
         {
+           
             movement.x = 0;
             movement.y = 0;
             directionChosen = false;

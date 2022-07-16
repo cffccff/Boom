@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pakupa : BaseEnemy
 {
-    float count;
+    float time_change;
     
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,17 +15,18 @@ public class Pakupa : BaseEnemy
             Destroy(collision.gameObject);
         }
     }
-    protected override void Update()
+ 
+    protected override void RandomDirection()
     {
-        base.Update();
-        count += Time.fixedDeltaTime;
+        base.RandomDirection();
+        time_change += Time.fixedDeltaTime;
 
-        if (count >= 60)
+        if (time_change >= 60)
         {
-            Debug.Log("count " + count);
+            Debug.Log("time_change " + time_change);
             Debug.Log("change");
             directionChosen = false;
-            count = 0;
+            time_change = 0;
         }
     }
 }
