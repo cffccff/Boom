@@ -13,14 +13,13 @@ public class Victory : MonoBehaviour
     }
     public void nextLevel()
     {
+        FindObjectOfType<GameManager>().loadEnemy(PlayerPrefs.GetInt("SelectedLevel") + 1);//load enemy
+
         Movement.instance.transform.position = new Vector2 (1, 0);// reset vị trí player
 
         gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
         
-
-        LevelManager.instance.loadNextData(); //load map
-
-        FindObjectOfType<GameManager>().loadEnemy(PlayerPrefs.GetInt("SelectedLevel") + 1);
+        LevelManager.instance.loadNextData(); //load map       
 
         gameObject.SetActive(false); //đóng pannel
 

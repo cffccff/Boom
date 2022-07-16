@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] enemys;
+    //public GameObject[] enemys;
     [SerializeField] GameObject victoryPanel;
-    private GameObject enemies;
+    //private GameObject enemies;
 
     //Load Enemy
     public GameObject[] enemyLevels;
@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     {
         enemyLevels = new GameObject[transform.childCount];// cấp phát vùng nhớ
 
-        enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        countEnemy = enemys.Length;
+        //enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        //countEnemy = enemys.Length;
 
         //enemies = GameObject.Find("Enemies");
         //countEnemy = enemies.transform.childCount;
