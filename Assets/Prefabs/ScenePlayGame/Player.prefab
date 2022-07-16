@@ -467,7 +467,7 @@ MonoBehaviour:
   currentHealth: 0
   activeSpriteDeath: {fileID: 1314845770670612374}
   movement: {fileID: 1314845771205908872}
-  iFramesDuration: 1
+  iFramesDuration: 0.5
 --- !u!82 &9049065112414093941
 AudioSource:
   m_ObjectHideFlags: 0

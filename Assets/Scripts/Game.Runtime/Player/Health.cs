@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public Movement movement;
 
     [Header("iFrames")] 
-    [SerializeField] private float iFramesDuration; // thời gian bất tử
+    [SerializeField] private float iFramesDuration =0.5f; // thời gian bất tử
     private SpriteRenderer spriteRend;
     private void Start()
     {
@@ -31,9 +31,7 @@ public class Health : MonoBehaviour
     }
     public void takeDamage()
     {
-        currentHealth--;
-        
-        StartCoroutine(Invunerability());
+        currentHealth--;                
 
         if (currentHealth <= 0)
         {
@@ -44,7 +42,9 @@ public class Health : MonoBehaviour
             Invoke(nameof(Death), 1.25f);
         }
         if (currentHealth <= 1) return;
+
         transform.position = new Vector3(1, 0, 0);
+        StartCoroutine(Invunerability());
     }
     private void Death()
     {
