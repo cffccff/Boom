@@ -6,19 +6,21 @@ using UnityEngine.Tilemaps;
 public class BombController : MonoBehaviour
 {
     [Header("Bomb")]
-    public GameObject bombPrefab;
     public KeyCode inputKey = KeyCode.Space;
+    private AudioSource bombAudio;
+    public GameObject bombPrefab;   
     public float bombFuseTime = 3f;
     public int bombAmount = 1;// số lượng bom tối đa được phép đặt
     private int bombsRemaining;
-    private AudioSource bombAudio;
+    
+    public Vector2 checkBombPosition;
+    public Vector2 playerPosition;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
     public int explosionRadius = 1; // phạm vi boom nổ đầu game //itempick điều chỉnh khi ăn buff
-    public Vector2 destroyPosition;
 
     [Header("Destructible")]
     public Tilemap destructibleTiles;
@@ -47,9 +49,17 @@ public class BombController : MonoBehaviour
 
     private void Update()
     {
+
         if (bombsRemaining >0 && Input.GetKeyDown(inputKey))
-        {           
+        {
+            playerPosition = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
+
+            if (checkBombPosition == new Vector2(0, 0)) checkBombPosition = playerPosition;
+            else if (checkBombPosition != playerPosition) checkBombPosition = playerPosition;
+            else if (checkBombPosition == playerPosition) return;
+
             StartCoroutine(PlaceBomb());
+            
         }
     }
     private IEnumerator PlaceBomb()
@@ -57,8 +67,11 @@ public class BombController : MonoBehaviour
         Vector2 position = transform.position;// tạo vị trí
         position.x = Mathf.Round(position.x); // làm tròn x
         position.y = Mathf.Round(position.y); //
+        Debug.Log(position);
+        
         //dùng hàm pooling
-        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
+        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);       
+
         bombsRemaining--;
         
         yield return new WaitForSeconds(bombFuseTime);// thời gian tồn tại
