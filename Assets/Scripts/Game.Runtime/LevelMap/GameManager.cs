@@ -19,19 +19,21 @@ public class GameManager : MonoBehaviour
 
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
         countEnemy = enemys.Length;
+
         //enemies = GameObject.Find("Enemies");
         //countEnemy = enemies.transform.childCount;
         //Debug.Log("Enemy total:" + countEnemy);
-        loadEnemy();
+        loadEnemy(PlayerPrefs.GetInt("SelectedLevel"));
     }
-    public void loadEnemy()
+
+    public void loadEnemy(int level)
     {       
         for (int i = 0; i < transform.childCount; i++)
-
         {
             enemyLevels[i] = transform.GetChild(i).gameObject;
-            enemyLevels[i].SetActive(active = PlayerPrefs.GetInt("SelectedLevel") == i + 1);
+            enemyLevels[i].SetActive(active = level == i + 1);
         }
+        Debug.Log(level);
     }
 
     public void CheckWinStage()// nếu enemy chết thì truyền vào đây

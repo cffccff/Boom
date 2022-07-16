@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,13 +13,18 @@ public class Victory : MonoBehaviour
     }
     public void nextLevel()
     {
-        Movement.instance.transform.position = new Vector2 (1, 0);
+        Movement.instance.transform.position = new Vector2 (1, 0);// reset vị trí player
 
-        gameObject.GetComponentInParent<RemoveItem>().remove();
+        gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
+        
 
-        LevelManager.instance.loadNextData();        
-        gameObject.SetActive(false);
-        Time.timeScale = 1;        
+        LevelManager.instance.loadNextData(); //load map
+
+        FindObjectOfType<GameManager>().loadEnemy(PlayerPrefs.GetInt("SelectedLevel") + 1);
+
+        gameObject.SetActive(false); //đóng pannel
+
+        Time.timeScale = 1;  //chạy game      
     }
     public void reloadLevel()
     {
