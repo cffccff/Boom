@@ -17,6 +17,7 @@ public class Pause : MonoBehaviour
 public void loadLevelsSence()
     {
         SceneManager.LoadScene("LevelMap");
+        GameMusic.Instance.PlayMusicBackGround();
         Time.timeScale = 1;
     }
 }

@@ -20,12 +20,17 @@ public class GameManager : MonoBehaviour
         enemys = GameObject.FindGameObjectsWithTag("Enemy");
         countEnemy = enemys.Length;
 
-        //enemies = GameObject.Find("Enemies");
+        //
         //countEnemy = enemies.transform.childCount;
         //Debug.Log("Enemy total:" + countEnemy);
         loadEnemy(PlayerPrefs.GetInt("SelectedLevel"));
     }
-
+    private void GetParentEnemy()
+    {
+        enemies = GameObject.Find("Enemies");
+        int selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
+       // GameObject enemiesInSelectedLevel = enemies.getc
+    }
     public void loadEnemy(int level)
     {       
         for (int i = 0; i < transform.childCount; i++)
@@ -42,6 +47,10 @@ public class GameManager : MonoBehaviour
         if (countEnemy <= 0)
         {
             victoryPanel.SetActive(true);
+            SetNewCurrentLevel();
+
+
+
             Time.timeScale = 0; 
             saveGold();
         }
@@ -50,5 +59,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("hien thi");
         FindObjectOfType<SaveGold>().saveGold();
+    }
+    private void SetNewCurrentLevel()
+    {
+        int currentLevel = PlayerPrefs.GetInt("currentLevel");
+        int selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
+        if (currentLevel == selectedLevel)
+        {
+            currentLevel++;
+            PlayerPrefs.SetInt("currentLevel", currentLevel);
+        }
     }
 }
