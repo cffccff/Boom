@@ -137,7 +137,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         //debug
-        Debug.Log("Level was loaded");
+      
     
     }
 }

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     //public GameObject[] enemys;
     [SerializeField] GameObject victoryPanel;
-    //private GameObject enemies;
+    private Transform enemies;
 
     //Load Enemy
     public GameObject[] enemyLevels;
@@ -23,13 +23,22 @@ public class GameManager : MonoBehaviour
         //
         //countEnemy = enemies.transform.childCount;
         //Debug.Log("Enemy total:" + countEnemy);
-        loadEnemy(PlayerPrefs.GetInt("SelectedLevel"));
+        LoadEnemy();
+       // loadEnemy(PlayerPrefs.GetInt("SelectedLevel"));
     }
-    private void GetParentEnemy()
+    private void LoadEnemy()
     {
-        enemies = GameObject.Find("Enemies");
+        enemies = GameObject.Find("Enemies").transform;
         int selectedLevel = PlayerPrefs.GetInt("SelectedLevel");
-       // GameObject enemiesInSelectedLevel = enemies.getc
+        
+        enemies.GetChild(selectedLevel - 1).gameObject.SetActive(true);
+        Transform enemiesInSelectedLevel = enemies.GetChild(selectedLevel - 1).gameObject.transform;
+        int totalEnemyInSelectedLevel = enemiesInSelectedLevel.childCount;
+        countEnemy = totalEnemyInSelectedLevel;
+        for (int i = 0; i < totalEnemyInSelectedLevel; i++)
+        {
+            enemiesInSelectedLevel.GetChild(i).gameObject.SetActive(true);
+        }
     }
     public void loadEnemy(int level)
     {       
