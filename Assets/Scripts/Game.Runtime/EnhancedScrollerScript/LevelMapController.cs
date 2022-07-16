@@ -58,7 +58,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(PlayerPrefs.GetInt("SeletedLevel"));
+            SceneManager.LoadScene("StartMenu");
         }
     }
     /// <summary>
@@ -78,7 +78,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
         else
         {
            
-            PlayerPrefs.SetInt("currentLevel", 10);
+            PlayerPrefs.SetInt("currentLevel", 1);
             currentLevel = PlayerPrefs.GetInt("currentLevel");
 
         }
