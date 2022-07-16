@@ -21,6 +21,7 @@ public class Victory : MonoBehaviour
         
         LevelManager.instance.loadNextData(); //load map       
 
+        
         gameObject.SetActive(false); //đóng pannel
 
         Time.timeScale = 1;  //chạy game      
@@ -32,5 +33,5 @@ public class Victory : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }
-
+    
 }

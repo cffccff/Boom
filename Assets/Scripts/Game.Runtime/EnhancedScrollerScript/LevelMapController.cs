@@ -29,7 +29,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
     public EnhancedScrollerCellView cellViewPrefab;
     public TextMeshProUGUI totalStarTxt;
     public int numberOfCellsPerRow = 4;
-    public static int totalLevel = 40;
+    public static int totalLevel = 12;
     /// <summary>
     /// for set up list like 1 2 3 4 8 7 6 5 9 10 11 12 16 15 14 13 .....
     /// hold references to each row sub cell
@@ -58,7 +58,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(PlayerPrefs.GetInt("SeletedLevel"));
+            SceneManager.LoadScene("StartMenu");
         }
     }
     /// <summary>
@@ -70,7 +70,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
         _data = new List<LevelMapData>();
         int currentLevel;
         int totalStar = 0;
-        PlayerPrefs.DeleteAll();
+       // PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("currentLevel"))
         {
             currentLevel = PlayerPrefs.GetInt("currentLevel");
@@ -78,7 +78,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
         else
         {
            
-            PlayerPrefs.SetInt("currentLevel", 10);
+            PlayerPrefs.SetInt("currentLevel", 1);
             currentLevel = PlayerPrefs.GetInt("currentLevel");
 
         }
@@ -162,7 +162,7 @@ public class LevelMapController : MonoBehaviour, IEnhancedScrollerDelegate
     public void ViewCurrentLevel()
     {
         int jumpDataIndex = PlayerPrefs.GetInt("currentLevel");
-        jumpDataIndex = (40 - jumpDataIndex) / 4;
+        jumpDataIndex = (totalLevel - jumpDataIndex) / 4;
        
 
 
