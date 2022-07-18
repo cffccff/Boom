@@ -449,7 +449,9 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
-  destructibleTile: {fileID: 11400000, guid: a8cc271217c27e14ca7322328ad6b5db, type: 2}
+  destructibleTile:
+  - {fileID: 11400000, guid: 3a59e81187dee664faf1297d7c77106a, type: 2}
+  - {fileID: 11400000, guid: a8cc271217c27e14ca7322328ad6b5db, type: 2}
   timeExplotion: 0
   saveGold: {fileID: 0}
 --- !u!114 &1314845771205908878
@@ -466,10 +468,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSpriteDeath: {fileID: 1314845770670612374}
   gameOver: {fileID: 0}
+  movement: {fileID: 1314845771205908872}
+  healthBar: {fileID: 0}
   startingHealth: 3
   currentHealth: 0
   _takeDamage: 0
-  movement: {fileID: 1314845771205908872}
   iFramesDuration: 1
 --- !u!82 &9049065112414093941
 AudioSource:

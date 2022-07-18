@@ -7,7 +7,7 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    public int numberOfLevel = 6;
+    public int numberOfLevel = 7;
     public int selectedLevel ;
     public static LevelManager instance;//singleton
     

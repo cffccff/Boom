@@ -25,7 +25,8 @@ public class BombController : MonoBehaviour
     [Header("Destructible")]
     public Tilemap destructibleTiles;
     public Destructible destructiblePrefab; //script animaton vỡ 
-    public Tile destructibleTile;
+    //public Tile destructibleTile;
+    public TileBase[] destructibleTile;
 
     public float timeExplotion;
 
@@ -129,13 +130,15 @@ public class BombController : MonoBehaviour
     private void ClearDestructible(Vector2 position)
     {
         Vector3Int cell = destructibleTiles.WorldToCell(position); //Chuyển đổi vị trí thế giới thành vị trí ô trong destrucibles
-        //TileBase tile = destructibleTiles.GetTile(cell); // lấy ô trong tittle map destrucibles
-        Tile tile = destructibleTiles.GetTile<Tile>(cell); //lấy ô trong destrucible tại vị trí cell trong tileBase
-
-        if (tile != null && tile == destructibleTile) // ô đó khác null ô đó là ô phá huỷ được
+        //Tile tile = destructibleTiles.GetTile<Tile>(cell);// lấy ô trong tittle map destrucibles
+        TileBase tile = destructibleTiles.GetTile<TileBase>(cell); //lấy ô trong destrucible tại vị trí cell trong tileBase //
+        for (int i = 0; i < destructibleTile.Length; i++)
         {
-            Instantiate(destructiblePrefab, position, Quaternion.identity);//nhân bản gameobject script animation 
-            destructibleTiles.SetTile(cell, null); //chuyển ô trong tittle map thành null.
+            if (tile != null && tile == destructibleTile[i]) // ô đó khác null ô đó là ô phá huỷ được
+            {
+                Instantiate(destructiblePrefab, position, Quaternion.identity);//nhân bản gameobject script animation 
+                destructibleTiles.SetTile(cell, null); //chuyển ô trong tittle map thành null.
+            }
         }
     }
     public void AddBomb()

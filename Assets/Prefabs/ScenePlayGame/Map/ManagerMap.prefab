@@ -44,15 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116e00dbeffe38343a07db73c4fe2454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfLevel: 6
+  numberOfLevel: 7
   selectedLevel: 1
   tiles:
   - {fileID: 11400000, guid: 94ca232ed7f4e5948b2cd2e8aef8ed07, type: 2}
   - {fileID: 11400000, guid: 87bcc81921d158641b382f754fffd7d8, type: 2}
   - {fileID: 11400000, guid: 16a2e4685a0580f4eb11ca9a18dd30cd, type: 2}
   - {fileID: 11400000, guid: b2c5ef57b2dab39479080c77c3892cf4, type: 2}
-  - {fileID: 11400000, guid: 36c9885cc80eea84781c9041c7448a50, type: 2}
   - {fileID: 11400000, guid: 9901e7aa2d4ac33439a0e9b96d4fde1e, type: 2}
+  - {fileID: 11400000, guid: 36c9885cc80eea84781c9041c7448a50, type: 2}
+  - {fileID: 11400000, guid: 0ab05c94f546116498ba656193c7b98f, type: 2}
   - {fileID: 11400000, guid: c12080ac7716a704d87672b4432b61ed, type: 2}
   - {fileID: 11400000, guid: 6fc9c9ccd32734b42874a1a7a63f8e9d, type: 2}
   - {fileID: 11400000, guid: b40d86326a9f63740b2d7dfcfc970fbb, type: 2}
