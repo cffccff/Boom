@@ -435,20 +435,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ce2292a573d1d4e85f9979efdaa194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 4330111154690777820, guid: 975c7fa93ac588c4cab0b0464157c356, type: 3}
   inputKey: 32
+  bombPrefab: {fileID: 4330111154690777820, guid: 975c7fa93ac588c4cab0b0464157c356, type: 3}
   bombFuseTime: 3
   bombAmount: 1
+  checkBombPosition: {x: 0, y: 0}
+  playerPosition: {x: 0, y: 0}
   explosionPrefab: {fileID: 3561801230499774565, guid: cb1f18fe4b976c64f86efef36b7c7442, type: 3}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 64
   explosionDuration: 1
   explosionRadius: 1
-  destroyPosition: {x: 0, y: 0}
   destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
   destructibleTile: {fileID: 11400000, guid: a8cc271217c27e14ca7322328ad6b5db, type: 2}
+  timeExplotion: 0
   saveGold: {fileID: 0}
 --- !u!114 &1314845771205908878
 MonoBehaviour:
@@ -462,12 +464,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cffe9f6e7c5fe47b63f20ea80325b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeSpriteDeath: {fileID: 1314845770670612374}
   gameOver: {fileID: 0}
   startingHealth: 3
   currentHealth: 0
-  activeSpriteDeath: {fileID: 1314845770670612374}
+  _takeDamage: 0
   movement: {fileID: 1314845771205908872}
-  iFramesDuration: 0.5
+  iFramesDuration: 1
 --- !u!82 &9049065112414093941
 AudioSource:
   m_ObjectHideFlags: 0

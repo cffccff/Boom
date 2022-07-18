@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public AnimatedSprite activeSpriteDeath;
     public GameObject gameOver; // truyeefn screen Lose vao
+    public Movement movement;
+
+    [Header("Health")]
+    [SerializeField] Image healthBar;
     public int startingHealth =3;
     public int currentHealth;
-
-    public AnimatedSprite activeSpriteDeath;
-    public Movement movement;
+    public int _takeDamage;   
 
     [Header("iFrames")] 
     [SerializeField] private float iFramesDuration =0.5f; // thời gian bất tử
@@ -19,6 +22,8 @@ public class Health : MonoBehaviour
     private void Start()
     {
         spriteRend = GetComponent<SpriteRenderer>();
+        healthBar.fillAmount = startingHealth * 0.1f;
+        _takeDamage = startingHealth - 1;
         currentHealth = startingHealth;
     }
     private void OnTriggerEnter2D(Collider2D collision)// va chạm nổ 
@@ -29,9 +34,19 @@ public class Health : MonoBehaviour
             Debug.Log("bi dinh bom");
         }
     }
+    public void addHeart()
+    {
+        if (currentHealth == 10) return;
+
+        currentHealth++;
+        _takeDamage++;
+        healthBar.fillAmount += 0.1f;
+    }
     public void takeDamage()
     {
-        currentHealth--;                
+        currentHealth = _takeDamage;
+        healthBar.fillAmount = currentHealth * 0.1f;
+        if (currentHealth > 0) transform.position = new Vector3(1, 0, 0);
 
         if (currentHealth <= 0)
         {
@@ -40,11 +55,9 @@ public class Health : MonoBehaviour
             activeSpriteDeath.enabled = true;
 
             Invoke(nameof(Death), 1.25f);
+            return;
         }
-        if (currentHealth <= 1) return;
-
-        transform.position = new Vector3(1, 0, 0);
-        StartCoroutine(Invunerability());
+        StartCoroutine(Invunerability());      
     }
     private void Death()
     {
@@ -61,5 +74,7 @@ public class Health : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(8, 9, false);
         Physics2D.IgnoreLayerCollision(9, 13, false);
+
+        _takeDamage = currentHealth -1;
     }
 }

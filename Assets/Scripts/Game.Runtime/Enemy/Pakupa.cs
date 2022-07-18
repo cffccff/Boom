@@ -23,8 +23,8 @@ public class Pakupa : BaseEnemy
 
         if (time_change >= 60)
         {
-            Debug.Log("time_change " + time_change);
-            Debug.Log("change");
+            //Debug.Log("time_change " + time_change);
+            //Debug.Log("change");
             directionChosen = false;
             time_change = 0;
         }

@@ -27,7 +27,7 @@ public class BombController : MonoBehaviour
     public Destructible destructiblePrefab; //script animaton vỡ 
     public Tile destructibleTile;
 
-
+    public float timeExplotion;
 
     public SaveGold saveGold;
     private void Start()// cứ vào scene là truyền dữ liệu từ shop tới
@@ -49,9 +49,10 @@ public class BombController : MonoBehaviour
 
     private void Update()
     {
-
+        
         if (bombsRemaining >0 && Input.GetKeyDown(inputKey))
         {
+             
             playerPosition = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
 
             if (checkBombPosition == new Vector2(0, 0)) checkBombPosition = playerPosition;
@@ -95,6 +96,7 @@ public class BombController : MonoBehaviour
 
         Destroy(bomb);
         bombsRemaining++;
+        checkBombPosition = new Vector2(0, 0);
     }
     private void Explode(Vector2 position, Vector2 direction, int length)
     {
