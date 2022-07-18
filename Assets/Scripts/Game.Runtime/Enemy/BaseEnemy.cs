@@ -6,8 +6,12 @@ using UnityEngine.Tilemaps;
 public class BaseEnemy : MonoBehaviour
 {
     [SerializeField] private float moveSpeed=2f;
+
+    [Header("Health")] 
     [SerializeField] private int maxHealth=1;
     [SerializeField] private int currentHealth;
+    [SerializeField] private int takeDamege;
+
     protected Tilemap tilemap;
 
     private Animator animator;
@@ -52,12 +56,12 @@ public class BaseEnemy : MonoBehaviour
       //  moveSpeed = 2f;
        // maxHealth = 1;
         currentHealth = maxHealth;
-       
+        takeDamege = maxHealth - 1;
+
+
     }
     protected virtual void Update()
-    {
-       
-      
+    { 
         ///Set enemy direction if not chosen
         ///Check obstacles in enemy direction
         RandomDirection();
@@ -136,16 +140,18 @@ public class BaseEnemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-            if (currentHealth == 0) return;
-            StartCoroutine(Hurt());
 
-            currentHealth--;
+            currentHealth = takeDamege;
+
             if (currentHealth <= 0)
             {
                 moveSpeed = 0f;
                 coll.isTrigger = true;
                 Invoke(nameof(DestroyObject), 1.2f);
+                return;
             }
+
+            StartCoroutine(Hurt());
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
@@ -165,6 +171,8 @@ public class BaseEnemy : MonoBehaviour
 
     private IEnumerator Hurt()
     {
+        Physics2D.IgnoreLayerCollision(8, 13, true);
+
         for (float i = 0; i <= 0.5; i += 0.1f)
         {
             spriteRenderer.material = flashMaterial;
@@ -174,6 +182,10 @@ public class BaseEnemy : MonoBehaviour
             spriteRenderer.material = defaultMaterial;
             yield return new WaitForSeconds(.05f);
         }
+
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(8, 13, false);
+        takeDamege = currentHealth - 1;
     }
     private void DestroyObject()
     {

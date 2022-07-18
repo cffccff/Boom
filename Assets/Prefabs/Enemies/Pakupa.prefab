@@ -322,8 +322,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  maxHealth: 1
+  maxHealth: 2
   currentHealth: 0
+  takeDamege: 0
   flashMaterial: {fileID: 2100000, guid: 5c8742b3bf348484a9665ecf46ee6e7b, type: 2}
   defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   wallChecks:
