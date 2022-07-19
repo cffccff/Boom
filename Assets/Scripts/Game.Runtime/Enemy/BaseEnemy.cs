@@ -142,7 +142,7 @@ public class BaseEnemy : MonoBehaviour
         {
 
             currentHealth = takeDamege;
-
+            StartCoroutine(Hurt());
             if (currentHealth <= 0)
             {
                 moveSpeed = 0f;
@@ -151,7 +151,7 @@ public class BaseEnemy : MonoBehaviour
                 return;
             }
 
-            StartCoroutine(Hurt());
+          
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
@@ -165,7 +165,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            FindObjectOfType<Health>().takeDamage();
+            FindObjectOfType<PlayerHealth>().TakeDamage();
         }
     }
 

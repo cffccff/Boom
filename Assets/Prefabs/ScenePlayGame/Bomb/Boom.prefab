@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 728489092843163187}
   - component: {fileID: 7332370584393925628}
   - component: {fileID: 4936569742239039049}
+  - component: {fileID: -644782683437206687}
   m_Layer: 7
   m_Name: Boom
   m_TagString: Bomb
@@ -242,3 +243,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-644782683437206687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330111154690777820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d287c7c484e454ca7a5cc3276d9bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 4330111154690777820}
+  explosionPrefab: {fileID: 3561801230499774565, guid: cb1f18fe4b976c64f86efef36b7c7442, type: 3}
+  explosionLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  destructibleTiles: {fileID: 700733945402113966, guid: 06ebdc48787ca4b429d42b22054225c2, type: 3}
+  destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
+  destructibleTile:
+  - {fileID: 11400000, guid: 3a59e81187dee664faf1297d7c77106a, type: 2}
+  - {fileID: 11400000, guid: a8cc271217c27e14ca7322328ad6b5db, type: 2}

@@ -26,10 +26,10 @@ public class ItemPickup : MonoBehaviour
                 break;
 
             case ItemType.SpeedIncrease:
-                player.GetComponent<Movement>().speed++;
+                player.GetComponent<PlayerMovement>().moveSpeed++;
                 break;
             case ItemType.Heart:
-                player.GetComponent<Health>().addHeart();
+                player.GetComponent<PlayerHealth>().AddHeart();
                 break;
 
         }
