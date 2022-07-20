@@ -9,13 +9,13 @@ public class GameManager : MonoBehaviour
     private Transform enemies;
 
     //Load Enemy
-    public GameObject[] enemyLevels;
+  //  public GameObject[] enemyLevels;
     bool active;
 
     public int countEnemy;
     private void Start()
     {
-        enemyLevels = new GameObject[transform.childCount];// cấp phát vùng nhớ
+     //   enemyLevels = new GameObject[transform.childCount];// cấp phát vùng nhớ
 
         //enemys = GameObject.FindGameObjectsWithTag("Enemy");
         //countEnemy = enemys.Length;
@@ -35,20 +35,21 @@ public class GameManager : MonoBehaviour
         Transform enemiesInSelectedLevel = enemies.GetChild(selectedLevel - 1).gameObject.transform;
         int totalEnemyInSelectedLevel = enemiesInSelectedLevel.childCount;
         countEnemy = totalEnemyInSelectedLevel;
+        Debug.Log("Total Enemy is:" + countEnemy);
         for (int i = 0; i < totalEnemyInSelectedLevel; i++)
         {
             enemiesInSelectedLevel.GetChild(i).gameObject.SetActive(true);
         }
     }
-    public void loadEnemy(int level)
-    {       
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            enemyLevels[i] = transform.GetChild(i).gameObject;
-            enemyLevels[i].SetActive(active = level == i + 1);
-        }
-        Debug.Log(level);
-    }
+    //public void loadEnemy(int level)
+    //{       
+    //    for (int i = 0; i < transform.childCount; i++)
+    //    {
+    //        enemyLevels[i] = transform.GetChild(i).gameObject;
+    //        enemyLevels[i].SetActive(active = level == i + 1);
+    //    }
+    //    Debug.Log(level);
+    //}
 
     public void CheckWinStage()// nếu enemy chết thì truyền vào đây
     {

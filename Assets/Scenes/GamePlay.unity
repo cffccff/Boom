@@ -6347,6 +6347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerWhite
       objectReference: {fileID: 0}
+    - target: {fileID: 324189388077436451, guid: bb045dc58b59ede42bfef58853d18ee7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1554294275296917954, guid: bb045dc58b59ede42bfef58853d18ee7, type: 3}
       propertyPath: destructibleTiles
       value: 

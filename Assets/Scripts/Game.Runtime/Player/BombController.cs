@@ -11,16 +11,16 @@ public class BombController : MonoBehaviour
     public GameObject bombPrefab;   
     public float bombFuseTime = 3f;
     public int bombAmount = 1;// số lượng bom tối đa được phép đặt
-    private int bombsRemaining;
+    public static int bombsRemaining;
     
-    public Vector2 checkBombPosition;
+    public static Vector2 checkBombPosition;
     public Vector2 playerPosition;
 
     [Header("Explosion")]
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
-    public int explosionRadius = 1; // phạm vi boom nổ đầu game //itempick điều chỉnh khi ăn buff
+    public static int explosionRadius = 1; // phạm vi boom nổ đầu game //itempick điều chỉnh khi ăn buff
 
     [Header("Destructible")]
     public Tilemap destructibleTiles;
@@ -47,7 +47,11 @@ public class BombController : MonoBehaviour
     {
         explosionRadius = saveGold.explosionLevel + 1;
     }
-
+    public void AddBomb()
+    {
+        bombAmount++;
+        bombsRemaining++;
+    }
     private void Update()
     {
         
@@ -60,16 +64,20 @@ public class BombController : MonoBehaviour
             else if (checkBombPosition != playerPosition) checkBombPosition = playerPosition;
             else if (checkBombPosition == playerPosition) return;
 
-             StartCoroutine(PlaceBomb());
-           // PlaceBomb1();
+            // StartCoroutine(PlaceBomb());
+            PlaceBomb1();
         }
     }
     private void PlaceBomb1()
     {
         Vector2 position = transform.position;
+        position.x = Mathf.Round(position.x); 
+        position.y = Mathf.Round(position.y);
+        bombsRemaining--;
         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
         BombExplosion ab = bomb.GetComponent<BombExplosion>();
         StartCoroutine(ab.TestExplosion(position));
+       
     }
     private IEnumerator PlaceBomb()
     {
@@ -77,12 +85,12 @@ public class BombController : MonoBehaviour
         position.x = Mathf.Round(position.x); // làm tròn x
         position.y = Mathf.Round(position.y); //
         Debug.Log(position);
-        
+
         //dùng hàm pooling
-        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);       
+        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
 
         bombsRemaining--;
-        
+
         yield return new WaitForSeconds(bombFuseTime);// thời gian tồn tại
 
         position = bomb.transform.position;
@@ -111,7 +119,7 @@ public class BombController : MonoBehaviour
         if (length <= 0) return;
 
         position += direction;//vị trí 4 hướng truyền vào + thêm tạo ra vị trí nhân bản nổ 4 hướng
-        
+
         if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))// nếu tại vị trí có layer thì không tạo nhân bản nổ
         {
             ClearDestructible(position);
@@ -148,9 +156,5 @@ public class BombController : MonoBehaviour
             }
         }
     }
-    public void AddBomb()
-    {
-        bombAmount++;
-        bombsRemaining++;
-    }
+
 }

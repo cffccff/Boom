@@ -18,7 +18,7 @@ public class Victory : MonoBehaviour
 
         //Movement.instance.transform.position = new Vector2 (1, 0);// reset vị trí player
 
-        //gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
+        gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
 
         //LevelManager.instance.loadNextData(); //load map       
 
@@ -31,6 +31,7 @@ public class Victory : MonoBehaviour
     }
     public void reloadLevel()
     {
+        gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
         SceneManager.LoadScene("GamePlay");
        // LevelManager.instance.LoadLevel();
       //  gameObject.SetActive(false);

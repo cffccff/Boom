@@ -259,8 +259,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 3561801230499774565, guid: cb1f18fe4b976c64f86efef36b7c7442, type: 3}
   explosionLayerMask:
     serializedVersion: 2
-    m_Bits: 256
-  destructibleTiles: {fileID: 700733945402113966, guid: 06ebdc48787ca4b429d42b22054225c2, type: 3}
+    m_Bits: 64
+  destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
   destructibleTile:
   - {fileID: 11400000, guid: 3a59e81187dee664faf1297d7c77106a, type: 2}

@@ -15,6 +15,7 @@ public class GameOver : MonoBehaviour
     }
     public void reloadLevel()
     {
+        gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
         SceneManager.LoadScene("GamePlay");
        // LevelManager.instance.LoadLevel();
        // gameObject.SetActive(false);

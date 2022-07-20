@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5026934925911168526}
   - component: {fileID: 5026934925911168513}
   - component: {fileID: 5026934925911168512}
-  - component: {fileID: 5026934925911168527}
   - component: {fileID: 5026934925911168524}
   - component: {fileID: -2398875240434310523}
   m_Layer: 12
@@ -114,30 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5026934925911168527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5026934925911168515}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f636e46a5c7279d46b2e944f12cd07c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleSprite: {fileID: 21300000, guid: 4707ec6bcb84fed428e044aa80a5e3e1, type: 3}
-  animationSprites:
-  - {fileID: 440004201269631737, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  - {fileID: 6428096427953393541, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  - {fileID: 8603011222089355523, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  - {fileID: 2274631966701665123, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  - {fileID: -5598041726246172800, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  - {fileID: -5070355926835817348, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  - {fileID: -5028786312047504514, guid: 8482cc10c037d2846a26e45ca1a26d7b, type: 3}
-  animationTime: 0.14285715
-  loop: 0
-  idle: 0
 --- !u!114 &5026934925911168524
 MonoBehaviour:
   m_ObjectHideFlags: 0
