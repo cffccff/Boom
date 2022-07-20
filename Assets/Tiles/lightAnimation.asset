@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: lightAnimation
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -865720301, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
-  - {fileID: 926141046, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
-  - {fileID: -297339374, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
-  - {fileID: 906147801, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
+  - {fileID: 363626061, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: -884185981, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: 122277173, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: -86049942, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
   m_MinSpeed: 10
   m_MaxSpeed: 10
   m_AnimationStartTime: 0
