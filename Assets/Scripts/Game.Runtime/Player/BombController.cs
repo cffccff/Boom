@@ -153,6 +153,7 @@ public class BombController : MonoBehaviour
             {
                 Instantiate(destructiblePrefab, position, Quaternion.identity);//nhân bản gameobject script animation 
                 destructibleTiles.SetTile(cell, null); //chuyển ô trong tittle map thành null.
+                Debug.Log(tile);
             }
         }
     }

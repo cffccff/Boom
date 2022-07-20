@@ -88,7 +88,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.23004924}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45
 --- !u!50 &8724190550234530663
 Rigidbody2D:
   serializedVersion: 4
@@ -240,14 +240,12 @@ MonoBehaviour:
   bombPrefab: {fileID: 4330111154690777820, guid: 975c7fa93ac588c4cab0b0464157c356, type: 3}
   bombFuseTime: 3
   bombAmount: 1
-  checkBombPosition: {x: 0, y: 0}
   playerPosition: {x: 0, y: 0}
   explosionPrefab: {fileID: 3561801230499774565, guid: cb1f18fe4b976c64f86efef36b7c7442, type: 3}
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 64
   explosionDuration: 1
-  explosionRadius: 1
   destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
   destructibleTile:

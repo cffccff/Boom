@@ -140,7 +140,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-
+            if (currentHealth <= 0) return;
             currentHealth = takeDamege;
             StartCoroutine(Hurt());
             if (currentHealth <= 0)

@@ -72,7 +72,7 @@ public class BombExplosion : MonoBehaviour
     }
     private void Explode(Vector2 position, Vector2 direction, int length)
     {
-        Debug.Log("explode");
+       // Debug.Log("explode");
         if (length <= 0) return;
 
         position += direction;//vị trí 4 hướng truyền vào + thêm tạo ra vị trí nhân bản nổ 4 hướng
@@ -102,7 +102,7 @@ public class BombExplosion : MonoBehaviour
         {
             if (tile != null && tile == destructibleTile[i]) // ô đó khác null ô đó là ô phá huỷ được
             {
-                Debug.Log("Clear");
+                Debug.Log(tile.name);
                 Instantiate(destructiblePrefab, position, Quaternion.identity);//nhân bản gameobject script animation 
                 destructibleTiles.SetTile(cell, null); //chuyển ô trong tittle map thành null.
             }
