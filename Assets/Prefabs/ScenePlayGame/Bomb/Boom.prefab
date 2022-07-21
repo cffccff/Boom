@@ -263,7 +263,7 @@ MonoBehaviour:
   destructibleTiles: {fileID: 0}
   destructiblePrefab: {fileID: 5026934925911168524, guid: 9808384663c43e34fb1123cf0bac1eac, type: 3}
   destructibleTile:
-  - {fileID: 11400000, guid: 3a59e81187dee664faf1297d7c77106a, type: 2}
-  - {fileID: 11400000, guid: a8cc271217c27e14ca7322328ad6b5db, type: 2}
+  - {fileID: 11400000, guid: 6515df94d50840e4495254f2029ef0e0, type: 2}
   - {fileID: 11400000, guid: e4262b84fc30dba49917c0186290f3a7, type: 2}
+  - {fileID: 11400000, guid: 22b412fd085ca304cafe735496468563, type: 2}
   - {fileID: 11400000, guid: aa9267a9a2175ad4fbf7986d295675e5, type: 2}

@@ -7,7 +7,7 @@ using System.IO;
 
 public class LevelManager : MonoBehaviour
 {
-    public int numberOfLevel = 7;
+    public int numberOfLevel = 12;
     public int selectedLevel ;
     public static LevelManager instance;//singleton
     
@@ -94,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level5.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level12.json", json);
 
         //debug
         Debug.Log("Level was saved");
