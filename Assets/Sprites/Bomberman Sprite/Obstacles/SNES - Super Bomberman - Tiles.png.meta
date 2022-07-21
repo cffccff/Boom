@@ -16823,11 +16823,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_795
+      name: Ground2
       rect:
         serializedVersion: 2
-        x: 50
-        y: 430
+        x: 52
+        y: 428
         width: 16
         height: 16
       alignment: 0
@@ -18083,11 +18083,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_855
+      name: UnDestroy
       rect:
         serializedVersion: 2
-        x: 33
-        y: 413
+        x: 35
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18104,11 +18104,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_856
+      name: flower0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 413
+        x: 52
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18125,11 +18125,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_857
+      name: flower1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 413
+        x: 69
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18146,11 +18146,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_858
+      name: flower2
       rect:
         serializedVersion: 2
-        x: 84
-        y: 413
+        x: 86
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18167,11 +18167,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_859
+      name: flower3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 413
+        x: 103
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18188,11 +18188,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_860
+      name: flower4
       rect:
         serializedVersion: 2
-        x: 118
-        y: 413
+        x: 120
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18209,11 +18209,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_861
+      name: flower5
       rect:
         serializedVersion: 2
-        x: 135
-        y: 413
+        x: 137
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -18233,8 +18233,8 @@ TextureImporter:
       name: SNES - Super Bomberman - Tiles_862
       rect:
         serializedVersion: 2
-        x: 152
-        y: 413
+        x: 137
+        y: 411
         width: 16
         height: 16
       alignment: 0
@@ -19364,11 +19364,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_916
+      name: Ground Shadow2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 396
+        x: 35
+        y: 394
         width: 16
         height: 16
       alignment: 0
@@ -28310,11 +28310,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_1342
+      name: flowerDie1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 277
+        x: 18
+        y: 275
         width: 16
         height: 16
       alignment: 0
@@ -28331,11 +28331,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_1343
+      name: flowerDie2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 277
+        x: 35
+        y: 275
         width: 16
         height: 16
       alignment: 0
@@ -28352,11 +28352,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_1344
+      name: flowerDie3
       rect:
         serializedVersion: 2
-        x: 50
-        y: 277
+        x: 52
+        y: 275
         width: 16
         height: 16
       alignment: 0
@@ -28373,11 +28373,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_1345
+      name: flowerDie4
       rect:
         serializedVersion: 2
-        x: 67
-        y: 277
+        x: 69
+        y: 275
         width: 16
         height: 16
       alignment: 0
@@ -28394,11 +28394,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SNES - Super Bomberman - Tiles_1346
+      name: flowerDie5
       rect:
         serializedVersion: 2
-        x: 84
-        y: 277
+        x: 86
+        y: 275
         width: 16
         height: 16
       alignment: 0
@@ -28418,8 +28418,8 @@ TextureImporter:
       name: SNES - Super Bomberman - Tiles_1347
       rect:
         serializedVersion: 2
-        x: 101
-        y: 277
+        x: 103
+        y: 275
         width: 16
         height: 16
       alignment: 0
@@ -50086,6 +50086,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: flowerDie0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 275
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91a31c0488a2eb45a5c794817e444ee
+      internalID: -1219072313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Bomberman - Tiles_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 275
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d10591b579fefa4b9a44586e4c4fe98
+      internalID: -1481178503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Super Bomberman - Tiles_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 275
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec1040819117844fb79ab56187fe91c
+      internalID: -1918819307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -50140,7 +50203,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_337: 2075240982
       SNES - Super Bomberman - Tiles_408: 1202353809
       SNES - Super Bomberman - Tiles_2282: -1920303650
-      SNES - Super Bomberman - Tiles_1343: 31180119
       SNES - Super Bomberman - Tiles_1950: -192428065
       SNES - Super Bomberman - Tiles_472: 1121812268
       SNES - Super Bomberman - Tiles_773: 1279115078
@@ -50308,6 +50370,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_2083: 1601602435
       SNES - Super Bomberman - Tiles_1082: 109542382
       SNES - Super Bomberman - Tiles_145: -2140862390
+      flowerDie0: -1219072313
       SNES - Super Bomberman - Tiles_2044: 207213748
       SNES - Super Bomberman - Tiles_356: 2005090490
       SNES - Super Bomberman - Tiles_1276: -1197130584
@@ -50379,8 +50442,8 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1023: 308778284
       SNES - Super Bomberman - Tiles_221: 806877135
       SNES - Super Bomberman - Tiles_1722: 1622860745
-      SNES - Super Bomberman - Tiles_1271: -1027093629
       SNES - Super Bomberman - Tiles_2167: 950487910
+      SNES - Super Bomberman - Tiles_1271: -1027093629
       SNES - Super Bomberman - Tiles_1577: 1756777182
       SNES - Super Bomberman - Tiles_1004: 2120452244
       SNES - Super Bomberman - Tiles_1053: 223853106
@@ -50412,10 +50475,9 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_2137: 260547539
       SNES - Super Bomberman - Tiles_2025: -1503143936
       SNES - Super Bomberman - Tiles_274: -570496753
-      SNES - Super Bomberman - Tiles_1346: 272208594
       SNES - Super Bomberman - Tiles_366: -445574310
-      SNES - Super Bomberman - Tiles_2314: -1541810603
       SNES - Super Bomberman - Tiles_56: -532653829
+      SNES - Super Bomberman - Tiles_2314: -1541810603
       SNES - Super Bomberman - Tiles_286: 439144156
       SNES - Super Bomberman - Tiles_1231: 135354964
       SNES - Super Bomberman - Tiles_731: -2100351765
@@ -50433,8 +50495,8 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1239: 788212492
       SNES - Super Bomberman - Tiles_1340: -103525333
       SNES - Super Bomberman - Tiles_3: -513974313
-      SNES - Super Bomberman - Tiles_1930: -1312663245
       SNES - Super Bomberman - Tiles_1623: -756549545
+      SNES - Super Bomberman - Tiles_1930: -1312663245
       SNES - Super Bomberman - Tiles_263: -1336338051
       SNES - Super Bomberman - Tiles_1143: -1456619948
       SNES - Super Bomberman - Tiles_823: 1454899608
@@ -50525,6 +50587,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_27: -697746817
       SNES - Super Bomberman - Tiles_1509: 1180080244
       SNES - Super Bomberman - Tiles_935: -891045641
+      flowerDie1: -1535108505
       SNES - Super Bomberman - Tiles_1273: -1205382747
       SNES - Super Bomberman - Tiles_1624: -514139559
       SNES - Super Bomberman - Tiles_426: -1166021760
@@ -50581,7 +50644,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1449: -566760799
       SNES - Super Bomberman - Tiles_25: -1092604809
       SNES - Super Bomberman - Tiles_589: -1411566877
-      SNES - Super Bomberman - Tiles_855: 2032145873
       SNES - Super Bomberman - Tiles_637: -1093829202
       SNES - Super Bomberman - Tiles_461: -1666403209
       SNES - Super Bomberman - Tiles_1868: 231023672
@@ -50642,6 +50704,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_2327: 1161364318
       SNES - Super Bomberman - Tiles_2332: -1335965311
       SNES - Super Bomberman - Tiles_1812: 824610080
+      flowerDie4: -1427254751
       SNES - Super Bomberman - Tiles_1641: -721103770
       SNES - Super Bomberman - Tiles_156: -1096357169
       SNES - Super Bomberman - Tiles_1682: -2144579036
@@ -50698,7 +50761,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1883: 1918958700
       SNES - Super Bomberman - Tiles_355: -1432943547
       SNES - Super Bomberman - Tiles_817: 1863360782
-      SNES - Super Bomberman - Tiles_858: 1734808828
       SNES - Super Bomberman - Tiles_395: -234439965
       SNES - Super Bomberman - Tiles_243: 1220108226
       SNES - Super Bomberman - Tiles_808: 1466052702
@@ -50706,24 +50768,25 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_714: 695306847
       SNES - Super Bomberman - Tiles_108: -1934814286
       SNES - Super Bomberman - Tiles_1819: 1551366640
-      SNES - Super Bomberman - Tiles_382: 1158475394
       SNES - Super Bomberman - Tiles_1751: 1581019583
       SNES - Super Bomberman - Tiles_2207: 1947830789
       SNES - Super Bomberman - Tiles_2274: 308784395
-      SNES - Super Bomberman - Tiles_2201: -1401458809
+      SNES - Super Bomberman - Tiles_382: 1158475394
+      flowerDie2: 31180119
       SNES - Super Bomberman - Tiles_953: -1091665714
+      SNES - Super Bomberman - Tiles_2201: -1401458809
       SNES - Super Bomberman - Tiles_700: -451326604
-      SNES - Super Bomberman - Tiles_2324: -185188759
+      SNES - Super Bomberman - Tiles_1947: -377523349
       SNES - Super Bomberman - Tiles_1545: 674797228
       SNES - Super Bomberman - Tiles_774: -503451347
       SNES - Super Bomberman - Tiles_1562: 1346210197
       SNES - Super Bomberman - Tiles_1576: 167530984
-      SNES - Super Bomberman - Tiles_1947: -377523349
       SNES - Super Bomberman - Tiles_1311: -1871726164
       SNES - Super Bomberman - Tiles_2089: -1422774762
       SNES - Super Bomberman - Tiles_61: 922961715
       SNES - Super Bomberman - Tiles_1504: -1823184481
       SNES - Super Bomberman - Tiles_2074: -1499046951
+      SNES - Super Bomberman - Tiles_2324: -185188759
       SNES - Super Bomberman - Tiles_1799: 1599261872
       SNES - Super Bomberman - Tiles_1397: 830665538
       SNES - Super Bomberman - Tiles_2356: -1654983548
@@ -50910,6 +50973,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_585: -1384027585
       SNES - Super Bomberman - Tiles_1806: 28920272
       SNES - Super Bomberman - Tiles_1792: 1373226995
+      flower1: 8647634
       SNES - Super Bomberman - Tiles_89: 347851182
       SNES - Super Bomberman - Tiles_1065: 261715125
       SNES - Super Bomberman - Tiles_459: -1039981934
@@ -50971,10 +51035,9 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_605: -2010370956
       SNES - Super Bomberman - Tiles_784: 1887142366
       SNES - Super Bomberman - Tiles_678: 438644652
-      SNES - Super Bomberman - Tiles_795: -678161789
       SNES - Super Bomberman - Tiles_818: -315682873
-      SNES - Super Bomberman - Tiles_1742: -819387257
       SNES - Super Bomberman - Tiles_849: -2126544228
+      SNES - Super Bomberman - Tiles_1742: -819387257
       SNES - Super Bomberman - Tiles_604: -114527536
       SNES - Super Bomberman - Tiles_504: 334511706
       SNES - Super Bomberman - Tiles_717: 884946888
@@ -51162,6 +51225,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_122: -1651299900
       SNES - Super Bomberman - Tiles_722: 272018153
       SNES - Super Bomberman - Tiles_748: 1248399014
+      SNES - Super Bomberman - Tiles_19: -1481178503
       SNES - Super Bomberman - Tiles_1511: 486215375
       SNES - Super Bomberman - Tiles_185: 1700731007
       SNES - Super Bomberman - Tiles_710: 1949378581
@@ -51198,6 +51262,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_545: 1200413815
       SNES - Super Bomberman - Tiles_2197: 160354922
       SNES - Super Bomberman - Tiles_2364: -1318146905
+      flower4: 244226925
       SNES - Super Bomberman - Tiles_1312: 777437193
       SNES - Super Bomberman - Tiles_1222: -878143598
       SNES - Super Bomberman - Tiles_160: 492444852
@@ -51244,6 +51309,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_566: -477863403
       SNES - Super Bomberman - Tiles_2112: 1914649062
       SNES - Super Bomberman - Tiles_1931: 1444427304
+      SNES - Super Bomberman - Tiles_20: -1918819307
       SNES - Super Bomberman - Tiles_660: -150076279
       SNES - Super Bomberman - Tiles_2164: 314643930
       SNES - Super Bomberman - Tiles_1997: -948126583
@@ -51276,7 +51342,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_374: -1503709360
       SNES - Super Bomberman - Tiles_561: 2120863050
       SNES - Super Bomberman - Tiles_425: 638923624
-      SNES - Super Bomberman - Tiles_1344: 303638714
       SNES - Super Bomberman - Tiles_529: -1540681249
       SNES - Super Bomberman - Tiles_1830: -703262836
       SNES - Super Bomberman - Tiles_1512: -32726840
@@ -51326,20 +51391,20 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_2153: 2022797456
       SNES - Super Bomberman - Tiles_847: 91183575
       SNES - Super Bomberman - Tiles_1019: 1614226960
-      SNES - Super Bomberman - Tiles_2260: -1063769441
+      SNES - Super Bomberman - Tiles_1038: 2000586674
       SNES - Super Bomberman - Tiles_877: 2045505588
       SNES - Super Bomberman - Tiles_535: 1497198254
-      SNES - Super Bomberman - Tiles_1038: 2000586674
+      SNES - Super Bomberman - Tiles_1172: 1747805324
       SNES - Super Bomberman - Tiles_359: 1252810747
       SNES - Super Bomberman - Tiles_1241: 180551383
-      SNES - Super Bomberman - Tiles_1172: 1747805324
       SNES - Super Bomberman - Tiles_66: -1271774857
       SNES - Super Bomberman - Tiles_891: -515833287
       SNES - Super Bomberman - Tiles_333: 1235939731
-      SNES - Super Bomberman - Tiles_1274: 1723299899
-      SNES - Super Bomberman - Tiles_744: -1823740664
       SNES - Super Bomberman - Tiles_985: 1966042497
+      SNES - Super Bomberman - Tiles_744: -1823740664
       SNES - Super Bomberman - Tiles_2182: 1782141869
+      SNES - Super Bomberman - Tiles_1274: 1723299899
+      SNES - Super Bomberman - Tiles_2260: -1063769441
       SNES - Super Bomberman - Tiles_936: -471041780
       SNES - Super Bomberman - Tiles_2230: -1512291075
       SNES - Super Bomberman - Tiles_1779: -474042898
@@ -51399,6 +51464,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_2090: 839673843
       SNES - Super Bomberman - Tiles_39: -1004222165
       SNES - Super Bomberman - Tiles_1294: -1183673617
+      flowerDie5: 272208594
       SNES - Super Bomberman - Tiles_98: 1499263588
       SNES - Super Bomberman - Tiles_1391: 1040378130
       SNES - Super Bomberman - Tiles_1782: 570366484
@@ -51563,6 +51629,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1465: 799965369
       SNES - Super Bomberman - Tiles_2016: 143594624
       SNES - Super Bomberman - Tiles_2185: -1183934908
+      flower3: 697412892
       SNES - Super Bomberman - Tiles_1613: -543453722
       SNES - Super Bomberman - Tiles_1718: 862865732
       SNES - Super Bomberman - Tiles_119: 1333815567
@@ -51638,6 +51705,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1582: -1395453806
       SNES - Super Bomberman - Tiles_1068: 1477991226
       SNES - Super Bomberman - Tiles_552: -1686029612
+      flowerDie3: 303638714
       SNES - Super Bomberman - Tiles_73: -766626983
       SNES - Super Bomberman - Tiles_1854: -456857876
       SNES - Super Bomberman - Tiles_1654: -2137391604
@@ -51738,6 +51806,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1385: 416858937
       SNES - Super Bomberman - Tiles_1787: 1087839936
       SNES - Super Bomberman - Tiles_1588: 930352331
+      Ground2: -678161789
       SNES - Super Bomberman - Tiles_348: -1175782815
       SNES - Super Bomberman - Tiles_838: 1550383465
       SNES - Super Bomberman - Tiles_640: 1667534306
@@ -51837,6 +51906,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_682: 53880237
       SNES - Super Bomberman - Tiles_702: 744096012
       SNES - Super Bomberman - Tiles_2151: -1757833875
+      flower5: -1120009073
       SNES - Super Bomberman - Tiles_2194: -1785310912
       SNES - Super Bomberman - Tiles_505: -2096200440
       SNES - Super Bomberman - Tiles_1487: 1513016176
@@ -51957,7 +52027,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1954: 340628389
       SNES - Super Bomberman - Tiles_2147: -1746827878
       SNES - Super Bomberman - Tiles_2244: -770711753
-      SNES - Super Bomberman - Tiles_1345: -1427254751
       SNES - Super Bomberman - Tiles_2193: -931119027
       SNES - Super Bomberman - Tiles_127: 1802697214
       SNES - Super Bomberman - Tiles_427: 1036068865
@@ -52076,7 +52145,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_509: -463032590
       SNES - Super Bomberman - Tiles_402: 1046977750
       SNES - Super Bomberman - Tiles_1045: -1429678498
-      SNES - Super Bomberman - Tiles_857: 8647634
+      Ground Shadow2: 1812793372
       SNES - Super Bomberman - Tiles_2302: 1084214324
       SNES - Super Bomberman - Tiles_654: -1724988626
       SNES - Super Bomberman - Tiles_1254: -1699743975
@@ -52150,7 +52219,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_36: 1651223162
       SNES - Super Bomberman - Tiles_12: -1035126380
       SNES - Super Bomberman - Tiles_2073: -1191262941
-      SNES - Super Bomberman - Tiles_1342: -1535108505
       SNES - Super Bomberman - Tiles_170: -18812531
       SNES - Super Bomberman - Tiles_124: -1931303254
       SNES - Super Bomberman - Tiles_1629: -1338251007
@@ -52200,10 +52268,9 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_2353: 313679044
       SNES - Super Bomberman - Tiles_1554: 1077194120
       SNES - Super Bomberman - Tiles_76: 36847933
-      SNES - Super Bomberman - Tiles_860: 244226925
+      SNES - Super Bomberman - Tiles_2105: 2121377010
       SNES - Super Bomberman - Tiles_597: -1216071604
       SNES - Super Bomberman - Tiles_1262: 2050880559
-      SNES - Super Bomberman - Tiles_2105: 2121377010
       SNES - Super Bomberman - Tiles_1795: 283058007
       SNES - Super Bomberman - Tiles_2334: -836396268
       SNES - Super Bomberman - Tiles_432: -2047006343
@@ -52221,6 +52288,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1200: 1666389890
       SNES - Super Bomberman - Tiles_1435: 1847503744
       SNES - Super Bomberman - Tiles_1433: -1829368158
+      flower2: 1734808828
       SNES - Super Bomberman - Tiles_2156: 1015099450
       SNES - Super Bomberman - Tiles_2060: -576692309
       SNES - Super Bomberman - Tiles_1663: -1941264330
@@ -52309,7 +52377,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1338: 916771186
       SNES - Super Bomberman - Tiles_517: -72135449
       SNES - Super Bomberman - Tiles_195: 821451955
-      SNES - Super Bomberman - Tiles_856: 948676221
+      SNES - Super Bomberman - Tiles_2299: -174039473
       SNES - Super Bomberman - Tiles_306: -846509968
       SNES - Super Bomberman - Tiles_2157: 578261601
       SNES - Super Bomberman - Tiles_252: 1602660136
@@ -52371,12 +52439,10 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1744: -429922386
       SNES - Super Bomberman - Tiles_2170: -1073095868
       SNES - Super Bomberman - Tiles_787: -2069186168
-      SNES - Super Bomberman - Tiles_859: 697412892
       SNES - Super Bomberman - Tiles_665: -599757737
       SNES - Super Bomberman - Tiles_2215: 250731815
       SNES - Super Bomberman - Tiles_711: 821503198
       SNES - Super Bomberman - Tiles_1940: 845339967
-      SNES - Super Bomberman - Tiles_2299: -174039473
       SNES - Super Bomberman - Tiles_147: 555482666
       SNES - Super Bomberman - Tiles_1730: -1814371102
       SNES - Super Bomberman - Tiles_315: 347776034
@@ -52388,6 +52454,7 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_1066: -1260232881
       SNES - Super Bomberman - Tiles_1468: 148855377
       SNES - Super Bomberman - Tiles_620: 164875384
+      flower0: 948676221
       SNES - Super Bomberman - Tiles_1204: 424171672
       SNES - Super Bomberman - Tiles_281: 2079558645
       SNES - Super Bomberman - Tiles_974: 264009387
@@ -52408,19 +52475,19 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_977: -593029526
       SNES - Super Bomberman - Tiles_1759: -487217791
       SNES - Super Bomberman - Tiles_6: 734671705
-      SNES - Super Bomberman - Tiles_861: -1120009073
+      SNES - Super Bomberman - Tiles_1918: 403755267
       SNES - Super Bomberman - Tiles_260: -744233613
       SNES - Super Bomberman - Tiles_1401: 1002678549
       SNES - Super Bomberman - Tiles_980: 139347986
       SNES - Super Bomberman - Tiles_436: 504044224
       SNES - Super Bomberman - Tiles_138: 1880844081
       SNES - Super Bomberman - Tiles_144: 322513327
-      SNES - Super Bomberman - Tiles_1918: 403755267
+      SNES - Super Bomberman - Tiles_1999: 181697010
       SNES - Super Bomberman - Tiles_961: 2132869347
+      UnDestroy: 2032145873
       SNES - Super Bomberman - Tiles_1777: -1954645983
       SNES - Super Bomberman - Tiles_816: -1376749051
       SNES - Super Bomberman - Tiles_1399: -107102547
-      SNES - Super Bomberman - Tiles_1999: 181697010
       SNES - Super Bomberman - Tiles_685: 118348643
       SNES - Super Bomberman - Tiles_1146: 90245365
       SNES - Super Bomberman - Tiles_336: 2091976718
@@ -52432,7 +52499,6 @@ TextureImporter:
       SNES - Super Bomberman - Tiles_331: 1992577779
       SNES - Super Bomberman - Tiles_1128: -857555016
       SNES - Super Bomberman - Tiles_549: -263776066
-      SNES - Super Bomberman - Tiles_916: 1812793372
       SNES - Super Bomberman - Tiles_165: 1775775054
       SNES - Super Bomberman - Tiles_372: 936033400
       SNES - Super Bomberman - Tiles_2192: 766402535

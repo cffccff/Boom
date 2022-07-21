@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5026934925911168513}
   - component: {fileID: 5026934925911168512}
   - component: {fileID: 5026934925911168524}
-  - component: {fileID: -2398875240434310523}
+  - component: {fileID: 7038621540724747542}
   m_Layer: 12
   m_Name: Destructible
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 888310085, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.990566, g: 0.9485137, b: 0.9485137, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &5026934925911168512
@@ -132,7 +132,7 @@ MonoBehaviour:
   - {fileID: 7368190325695247992, guid: a96df7d1716f9d147822fb0021997f52, type: 3}
   - {fileID: 7314951706381217462, guid: 4ce4fabbb96389349ac3bfb544011c34, type: 3}
   - {fileID: 7314951706381217462, guid: 710eed08ed025244db17e35af13257cc, type: 3}
---- !u!114 &-2398875240434310523
+--- !u!114 &7038621540724747542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,10 +141,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5026934925911168515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f636e46a5c7279d46b2e944f12cd07c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d2176cdfc34c1f448b13307fd11844b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 1244175042, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
   animationSprites:
   - {fileID: 1244175042, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
   - {fileID: 1492221225, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
@@ -152,6 +151,11 @@ MonoBehaviour:
   - {fileID: 1489231150, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
   - {fileID: 1471527153, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
   - {fileID: -938691824, guid: 99ad167b5b90fec4f9314e590ae2819c, type: 3}
+  animationSprites2:
+  - {fileID: -1219072313, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: -1535108505, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: 31180119, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: 303638714, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: -1427254751, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
+  - {fileID: 272208594, guid: 90480b5f16a4c6c4e9feafa6bff2d5ef, type: 3}
   animationTime: 0.16666667
-  loop: 0
-  idle: 0
