@@ -135,13 +135,13 @@ public class BombController : MonoBehaviour
 
     //    Explode(position, direction, length - 1); //nhân bản end song thì nhân bản các mid nếu lengh > 1
     //}
-    //private void OnTriggerExit2D(Collider2D collision) //nếu player ra khỏi bomb
-    //{
-    //    if (collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
-    //    {
-    //        collision.isTrigger = false;
-    //    }
-    //}
+    private void OnTriggerExit2D(Collider2D collision) //nếu player ra khỏi bomb
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bomb"))
+        {
+            collision.isTrigger = false;
+        }
+    }
     //private void ClearDestructible(Vector2 position)
     //{
     //    Vector3Int cell = destructibleTiles.WorldToCell(position); //Chuyển đổi vị trí thế giới thành vị trí ô trong destrucibles
