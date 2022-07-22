@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public Button playAgain;
+    private void Start()
+    {
+        GameMusic.Instance.PlayLose();
+    }
     public void loadLevelsSence()
     {
         GameMusic.Instance.PlayMusicBackGround();
@@ -15,6 +19,7 @@ public class GameOver : MonoBehaviour
     }
     public void reloadLevel()
     {
+        GameMusic.Instance.PlayMusicBattle();
         gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
         SceneManager.LoadScene("GamePlay");
        // LevelManager.instance.LoadLevel();

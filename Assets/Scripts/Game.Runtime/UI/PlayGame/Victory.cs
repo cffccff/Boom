@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
 {
+    private void Start()
+    {
+        GameMusic.Instance.PlayVictory();
+    }
     public void loadLevelsSence()
     {
         GameMusic.Instance.PlayMusicBackGround();
@@ -14,7 +18,8 @@ public class Victory : MonoBehaviour
     }
     public void nextLevel()
     {
-        //FindObjectOfType<GameManager>().loadEnemy(PlayerPrefs.GetInt("SelectedLevel") + 1);//load enemy
+        GameMusic.Instance.PlayMusicBattle();
+       //FindObjectOfType<GameManager>().loadEnemy(PlayerPrefs.GetInt("SelectedLevel") + 1);//load enemy
 
         //Movement.instance.transform.position = new Vector2 (1, 0);// reset vị trí player
 
@@ -31,6 +36,7 @@ public class Victory : MonoBehaviour
     }
     public void reloadLevel()
     {
+        GameMusic.Instance.PlayMusicBattle();
         gameObject.GetComponentInParent<RemoveItem>().remove();// xoá item
         SceneManager.LoadScene("GamePlay");
        // LevelManager.instance.LoadLevel();

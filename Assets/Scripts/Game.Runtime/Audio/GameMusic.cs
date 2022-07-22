@@ -17,6 +17,7 @@ public class GameMusic : MonoBehaviour
     [SerializeField] AudioClip[] audioClips;
     AudioClip clipPlay;
     public static GameMusic Instance;
+
     private void Awake()
     {
         //Singleton method
@@ -111,11 +112,29 @@ public class GameMusic : MonoBehaviour
     }
     public void PlayMusicBattle()
     {
+        int randomIndex = UnityEngine.Random.Range(1, audioClips.Length -2);
         audioSource.Stop();
-        clipPlay = audioClips[1];
+        clipPlay = audioClips[randomIndex];
         audioSource.clip = clipPlay;
         audioSource.Play();
         audioSource.loop = true;
+        Debug.Log(randomIndex);
+    }
+    public void PlayVictory()
+    {
+        audioSource.Stop();
+        clipPlay = audioClips[9];
+        audioSource.clip = clipPlay;
+        audioSource.loop = false;
+        audioSource.Play();
+    }
+    public void PlayLose()
+    {
+        audioSource.Stop();
+        clipPlay = audioClips[8];
+        audioSource.clip = clipPlay;
+        audioSource.loop = false;
+        audioSource.Play();
     }
     public void GetSlider()
     {

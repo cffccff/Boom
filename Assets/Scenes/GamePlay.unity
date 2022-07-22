@@ -6859,6 +6859,10 @@ PrefabInstance:
       propertyPath: destructibleTiles
       value: 
       objectReference: {fileID: 1370787339}
+    - target: {fileID: 9049065112414093941, guid: 1a2773d383b0ead488671a1265540a85, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7043510959119120784, guid: 5763cbc5e7763b9468a39e2d53ce9910, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2773d383b0ead488671a1265540a85, type: 3}
 --- !u!114 &4040766578248406677

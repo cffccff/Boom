@@ -171,7 +171,7 @@ public class BaseEnemy : MonoBehaviour
 
     private IEnumerator Hurt()
     {
-        Physics2D.IgnoreLayerCollision(8, 13, true);
+        coll.enabled = false;
 
         for (float i = 0; i <= 0.5; i += 0.1f)
         {
@@ -184,7 +184,7 @@ public class BaseEnemy : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
-        Physics2D.IgnoreLayerCollision(8, 13, false);
+        coll.enabled = true;
         takeDamege = currentHealth - 1;
     }
     private void DestroyObject()

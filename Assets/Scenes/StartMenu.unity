@@ -2410,6 +2410,14 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: e7a1d669f9efcf74aa99bfd41d84663a, type: 3}
   - {fileID: 8300000, guid: 66dbab51d83707246aa2a1ce78ee737c, type: 3}
+  - {fileID: 8300000, guid: f241c341675953747b2cf27723b2ef15, type: 3}
+  - {fileID: 8300000, guid: 8652e9f371d87bf4d877525d2d9b3ee9, type: 3}
+  - {fileID: 8300000, guid: c807d7885a7ab3f438f0270b61829789, type: 3}
+  - {fileID: 8300000, guid: 768cb828016c470449d045b15dfb4858, type: 3}
+  - {fileID: 8300000, guid: 81db44c59a2c4064da97f663ed4990d6, type: 3}
+  - {fileID: 8300000, guid: 34c25be89c774a04b88c228bb0e29e49, type: 3}
+  - {fileID: 8300000, guid: c2017f3efd079a347be3cb7c3fd616dc, type: 3}
+  - {fileID: 8300000, guid: f06cadbe3f3229041a631726edf905fd, type: 3}
 --- !u!1 &1127495914
 GameObject:
   m_ObjectHideFlags: 0
