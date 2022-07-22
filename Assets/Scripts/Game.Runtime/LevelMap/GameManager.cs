@@ -7,9 +7,10 @@ public class GameManager : MonoBehaviour
     //public GameObject[] enemys;
     [SerializeField] GameObject victoryPanel;
     private Transform enemies;
+    [SerializeField] GameObject player;
 
     //Load Enemy
-  //  public GameObject[] enemyLevels;
+    //  public GameObject[] enemyLevels;
     bool active;
 
     public int countEnemy;
@@ -58,16 +59,11 @@ public class GameManager : MonoBehaviour
         {
             victoryPanel.SetActive(true);
             SetNewCurrentLevel();
-
-
-
-            Time.timeScale = 0; 
             saveGold();
         }
     }
     void saveGold()
-    {
-        Debug.Log("hien thi");
+    {        
         FindObjectOfType<SaveGold>().saveGold();
     }
     private void SetNewCurrentLevel()
@@ -79,5 +75,7 @@ public class GameManager : MonoBehaviour
             currentLevel++;
             PlayerPrefs.SetInt("currentLevel", currentLevel);
         }
+        gameObject.SetActive(false);
+        player.SetActive(false);
     }
 }

@@ -2713,6 +2713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryPanel: {fileID: 1051125051}
+  player: {fileID: 1399061018}
   countEnemy: 0
 --- !u!1 &781014463
 GameObject:
@@ -4750,6 +4751,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4944789073169949650, guid: c58bedb0f8180f24ea1db3a0326428c6, type: 3}
   m_PrefabInstance: {fileID: 1387785841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1399061018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 324189388077436451, guid: bb045dc58b59ede42bfef58853d18ee7, type: 3}
+  m_PrefabInstance: {fileID: 7462370500472915693}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1403988107
 GameObject:
@@ -6967,6 +6973,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1591500214}
+    - target: {fileID: 1554294275296917955, guid: bb045dc58b59ede42bfef58853d18ee7, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 747707475}
     - target: {fileID: 8632721762662710964, guid: bb045dc58b59ede42bfef58853d18ee7, type: 3}
       propertyPath: m_RootOrder
       value: 8

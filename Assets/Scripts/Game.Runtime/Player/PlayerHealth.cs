@@ -18,15 +18,20 @@ public class PlayerHealth : MonoBehaviour
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration = 0.6f;
 
+    private Collider2D collider;
+    [SerializeField] GameObject gameManager;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        collider = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         healthBar.fillAmount = startingHealth * 0.1f;
         _takeDamage = startingHealth - 1;
         currentHealth = startingHealth;
+        Physics2D.IgnoreLayerCollision(8, 9, false);
+        Physics2D.IgnoreLayerCollision(9, 13, false);
     }
 
     // Update is called once per frame
@@ -74,13 +79,16 @@ public class PlayerHealth : MonoBehaviour
     {
         gameObject.SetActive(false);
         gameOver.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        gameManager.SetActive(false);
     }
     private IEnumerator Invunerability()
     {
-        Physics2D.IgnoreLayerCollision(8, 9, true); 
+        Physics2D.IgnoreLayerCollision(8, 9, true);
         Physics2D.IgnoreLayerCollision(9, 13, true);
-    
+        //collider.enabled = false;
+
+
         for (float i = 0; i <= 0.5; i += 0.1f)
         {
 
@@ -92,10 +100,11 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(.05f);
             
         }
-       // yield return new WaitForSeconds(iFramesDuration);
+        yield return new WaitForSeconds(iFramesDuration);
 
         Physics2D.IgnoreLayerCollision(8, 9, false);
         Physics2D.IgnoreLayerCollision(9, 13, false);
+        //collider.enabled = true;
 
         _takeDamage = currentHealth - 1;
     }
