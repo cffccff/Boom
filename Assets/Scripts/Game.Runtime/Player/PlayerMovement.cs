@@ -1,22 +1,27 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
-
+    public SaveGold saveGold;
     private Rigidbody2D rb;
     private Collider2D coll;
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
-    public float moveSpeed = 5f;
+    public float initialSpeed = 5f;
+    public float moveSpeed;
     void Start()
     {
-      
-
+        saveGold = FindObjectOfType<SaveGold>();
         SetUpReference();
-       
+        resetBuff();
+
+    }
+    public void resetBuff()// dùng khi vừa vào scene và khi load map() chưa update
+    {
+        moveSpeed = initialSpeed + saveGold.speedLevel * 0.5f;
     }
     private void Update()
     {

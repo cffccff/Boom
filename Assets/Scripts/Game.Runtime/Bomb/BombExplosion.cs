@@ -14,7 +14,7 @@ public class BombExplosion : MonoBehaviour
     public Destructible destructiblePrefab; //script animaton vỡ 
     //public Tile destructibleTile;
     public TileBase[] destructibleTile;
-    private float bombFuseTime = 1.25f;
+    private float bombFuseTime = 2f;
     private float explosionDuration = 0.625f;
     private void Start()
     {

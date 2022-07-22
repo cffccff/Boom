@@ -46,7 +46,7 @@ public class Shop : MonoBehaviour
     void Start()// lúc bắt đầu game và lúc load scene
     {
         LoadShopData();// load speedLevel, totalGold
-        //shopData.totalGold = 5000;
+        //shopData.totalGold = 511000;
         //shopData.speedLevel = 0;
         //shopData.bombLevel = 0;
         //shopData.explosionLevel = 0;

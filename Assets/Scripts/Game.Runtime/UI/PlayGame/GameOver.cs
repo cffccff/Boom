@@ -24,6 +24,6 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("GamePlay");
        // LevelManager.instance.LoadLevel();
        // gameObject.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 }

@@ -32,7 +32,7 @@ public class Victory : MonoBehaviour
         int selectedLevel = PlayerPrefs.GetInt("SelectedLevel")+1;
         PlayerPrefs.SetInt("SelectedLevel", selectedLevel);
         SceneManager.LoadScene("GamePlay");
-        Time.timeScale = 1;  //chạy game      
+        //Time.timeScale = 1;  //chạy game      
     }
     public void reloadLevel()
     {
@@ -41,7 +41,7 @@ public class Victory : MonoBehaviour
         SceneManager.LoadScene("GamePlay");
        // LevelManager.instance.LoadLevel();
       //  gameObject.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
     
 }

@@ -18,13 +18,13 @@ public class PlayerHealth : MonoBehaviour
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration = 0.6f;
 
-    private Collider2D collider;
+    private Collider2D colliderPlayer;
     [SerializeField] GameObject gameManager;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<CircleCollider2D>();
+        colliderPlayer = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         healthBar.fillAmount = startingHealth * 0.1f;
@@ -61,8 +61,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.fillAmount = currentHealth * 0.1f;
         if (currentHealth > 0)
         {
-            transform.position = new Vector3(1, 0, 0);
-           
+            transform.position = new Vector3(1, 0, 0);           
         }
 
         if (currentHealth <= 0)
