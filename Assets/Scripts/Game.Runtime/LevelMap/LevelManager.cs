@@ -94,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
         //save the data as a json
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level12.json", json);
+        File.WriteAllText(Application.dataPath + "/Resources/Levels/Level13.json", json);
 
         //debug
         Debug.Log("Level was saved");
